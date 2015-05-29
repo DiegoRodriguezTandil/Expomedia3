@@ -6,8 +6,11 @@
             </div>
             <div id="recorrido">
                 <table id="recorrido_tabla">			
-                    <tr ng_repeat="viaje in travelInfo.viajes" class="dato odd">
-                        <td>{{viaje.hora}}</td><td>{{viaje.origen}}</td><td>{{viaje.empresa}}</td>
+                    <tr 
+                        ng_repeat="viaje in travelInfo.viajes" 
+                        ng-class-odd="'dato odd'" ng-class-even="'dato even'"
+                    >
+                        <td>{{viaje.hora}}</td><td>{{viaje.destino}}</td><td>{{viaje.empresa}}</td>
                     </tr>	
                     <!-- tr class="dato even">
                         <td>04:35</td><td>Mar del Plata</td><td>El Cóndor</td>
@@ -19,14 +22,52 @@
     
     <div id="adds" ng-controller="AddsController as adds">
         <div id="publicidad">
-            lalala
+            <!----------- Slide ------->
+            <div class="main_image">
+                    <img src="images/banner01.png" alt="- banner1" />
+                    <div class="desc">
+
+                            <div class="block">
+                                    <h2>Luigi's Mansion</h2>
+                                    <small>08/27/2013</small>
+                            </div>
+                    </div>
+            </div>
+            <div class="image_thumb" style="display:none;">
+                    <ul>
+                            <li>
+                                    <a href="img/CAMB3919.jpg"><img src="img/CAMB3919.jpg" alt="Luigi Mansion" /></a>
+
+                            </li>
+                            <li>
+                                    <a href="img/CAMB3878.jpg"><img src="img/CAMB3878.jpg" alt="The Outichoke Lantern" /></a>
+                            </li>
+                            <li>
+                                    <a href="img/CAMB3930.jpg"><img src="img/CAMB3930.jpg" alt="waiter illustration" /></a>			
+                            </li>
+                            <li>
+                                    <a href="img/CAMB3966.jpg"><img src="img/CAMB3966.jpg" alt="magic rabbit in the hat" /></a>
+                            </li>
+                            <li>
+                                    <a href="img/CAMB4048.jpg"><img src="img/CAMB4048.jpg" alt="Puzzled Putter" /></a>
+                            </li>
+                            <li>
+                                    <a href="img/CAMB4190.jpg"><img src="img/CAMB4190.jpg" alt="laboratory background night" /></a>
+                            </li>
+                    </ul>
+            </div>
+
+<script type="text/javascript">
+</script>
+            
+        <!------------- SLIDE -------------->    
         </div>
     </div>
     
-    <div id="news" ng-controller="NewsController as news">
+    <div id="news">
         <div id="footer">
-            <div id="noticias">{{news.activeNews}}</div>
-            <div id="reloj"></div>
+            <div id="noticias" ng-controller="NewsController as news">{{news.activeNews}}</div>
+            <div id="reloj" ng-controller="ClockController as clock">{{clock.time}}</div>
         </div>
     </div>
 </div>

@@ -2,6 +2,8 @@
     error_reporting(-1);
     ini_set('display_errors', 'On');
     
+    const CANTIDAD_VIAJES = 10;
+    
     include_once 'RssReader.php';
 
     //file_put_contents('params.log', var_dump($_GET));
@@ -20,56 +22,40 @@
         &&($_GET['action'] == 'travel')
     )
     {
-        $rta['viajes'] = array(
-            array(
-                'hora' => '08:10',
-                'origen' => 'Tandil',
-                'destino'=> 'Mar del Plata',
-                'empresa'=> 'El Rapido'
-            ),
-            array(
-                'hora' => '09:00',
-                'origen' => 'Tandil',
-                'destino'=> 'Azul',
-                'empresa'=> 'Condor'
-            ),
-            array(
-                'hora' => '09:10',
-                'origen' => 'Azul',
-                'destino'=> 'La Plata',
-                'empresa'=> 'Rio Paraná'
-            ),
-            array(
-                'hora' => '09:30',
-                'origen' => 'Tandil',
-                'destino'=> 'Retiro',
-                'empresa'=> 'El Rapido'
-            ),
-            array(
-                'hora' => '09:50',
-                'origen' => 'Balcarce',
-                'destino'=> 'Bahia Blanca',
-                'empresa'=> 'Rio Paraná'
-            ),
-            array(
-                'hora' => '10:10',
-                'origen' => 'Tandil',
-                'destino'=> 'La Plata',
-                'empresa'=> 'Río Paraná'
-            ),
-            array(
-                'hora' => '10:30',
-                'origen' => 'Tandil',
-                'destino'=> 'Mar del Plata',
-                'empresa'=> 'El Rapido'
-            ),
-            array(
-                'hora' => '11:10',
-                'origen' => 'Tandil',
-                'destino'=> 'Balcarce',
-                'empresa'=> 'Condor'
-            ),
-        );
+        include_once 'horarios.php';
+        
+        $cant = CANTIDAD_VIAJES;
+        $now = time();        
+        $r = array();
+        $manana = array();
+        
+        $i=0;
+        
+        while(($i<$cant)&&(count($horarios)>0))
+        {
+            $h = array_shift($horarios);
+            if( $now <= strtotime($h['hora']) )
+            {
+                array_push($r,$h);
+                $i++;
+            }
+            else
+            {
+                array_push($manana, $h);
+            }
+        }
+        
+        if($i<$cant)
+        {
+            while(($i<$cant)&&(count($manana)>0))
+            {
+                $h = array_shift($manana);
+                array_push($r,$h);
+                $i++;
+            }            
+        }
+        
+        $rta['viajes'] = $r;
     }
     else 
     {
@@ -85,7 +71,7 @@
                 $rta[] = array(
                     'channel' => 'clarin',
                     //'news' => htmlspecialchars($item->title),//.': '.htmlspecialchars($item->description),//(string)$item->title,//$noticia,
-                    'news' => (string)$item->title,
+                    'news' => 'Clarin.com: '.(string)$item->title,
                     'image' => (string)$rss->rss->channel->image->url,
                     'pubDate' => $item->pubDate,
                 );
@@ -103,7 +89,7 @@
                     'pubDate' => $item->pubDate,
                 );
             }//foreach
-            
+*/            
             // DIARIO LA NACION
             $rss = new RssReader('http://contenidos.lanacion.com.ar/herramientas/rss/origen=2');
             if(!$rss->rss->error)
@@ -113,13 +99,13 @@
                     $rta[] = array(
                         'channel' => 'lanacion',
                         //'news' => htmlspecialchars($item->title),//': '.htmlspecialchars($item->content->div),//(string)$item->title,//$noticia,
-                        'news' => $item->title,
+                        'news' => 'La Nacion Online: '.(string)$item->title,
                         'image' => (string)$rss->rss->icon,
                         'pubDate' => $item->updated,
                     );
                 }//foreach
             }
-*/
+
         }//if
     }
     

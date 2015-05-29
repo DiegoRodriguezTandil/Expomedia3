@@ -14,7 +14,7 @@ body {
 	background: #014284;
 	clear: both; 
 	margin: 0 auto; 
-    font-size: 2em;
+        font-size: 2em;
 	height: 100%;
 }
 
@@ -115,3 +115,10 @@ body {
   width: 5%;
   font-weight: bold;
 }
+
+.fullBg {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+

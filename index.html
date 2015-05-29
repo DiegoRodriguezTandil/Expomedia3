@@ -13,31 +13,14 @@
             data-semver="1.4.0-rc.2" 
             src="https://code.angularjs.org/1.4.0-rc.2/angular-route.js"></script>      
             
-        <!-- link rel="stylesheet" href="css/style.css" / -->
+            
+   <link rel="stylesheet" type="text/css" media="all" href="slide/styles-s.css">
+   <script type="text/javascript" src="slide/jquery.js"></script>
+            
+            
         <script src="display.js"></script>
         <script src="js/v3.0/expomedia.js"></script>
-		<link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
-		<script>
-			function startTime() {
-                            /*
-				var today=new Date();
-				var h=today.getHours();
-				var m=today.getMinutes();
-				var s=today.getSeconds();
-				m = checkTime(m);
-				s = checkTime(s);
-				document.getElementById('reloj').innerHTML = h+":"+m;
-				var t = setTimeout(function(){startTime()},500);
-                                */
-			}
-
-			function checkTime(i) {
-                            /*
-				if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
-				return i;
-                                */
-			}
-		</script>
+	<link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
     </head>
     <body> <!-- onload="startTime()" -->
         <div ng-controller="MainController">

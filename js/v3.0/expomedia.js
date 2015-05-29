@@ -60,8 +60,8 @@
     ])
     
     // travel Scheduler Controllers
-    .controller('TravelScheduleController', ['$http', 
-        function($http)
+    .controller('TravelScheduleController', ['$http', '$interval', 
+        function($http, $interval)
         {
             var vm = this;
             
@@ -88,16 +88,18 @@
             };
             
             loadContent();
+            $interval(loadContent,300000);//cada 5 minutos
             
         }
     ])
-    .controller('AddsController', ['$http', 
-        function($http)
+    .controller('AddsController', ['$http', '$interval', 
+        function($http, $interval)
         {
             var vm = this;
-            vm.mensaje = "CARGANDO adds";
+            slide_run();
         }
     ])
+    // Noticias
     .controller('NewsController', ['$http', '$interval', 
         function($http, $interval)
         {
@@ -139,10 +141,36 @@
                     .then(onLoadContentComplete, onLoadContentError);
             };
             
-            //loadContent();
-            $interval(updateActiveNews,5000);
-            $interval(loadContent,10000);
+            loadContent();
+            $interval(updateActiveNews,5000);// Cambia noticia en pantalla cada 5 seg
+            $interval(loadContent,480000);// Busca nuevas noticias cada 8 min
             
+        }
+    ])
+    // Noticias
+    .controller('ClockController', ['$interval', 
+        function($interval)
+        {
+            var vm = this;
+            
+            vm.time = 0;
+            
+            var setTime = function() {
+                var today=new Date();
+                var h=today.getHours();
+                var m=today.getMinutes();
+                var s=today.getSeconds();
+                h = checkTime(h);
+                m = checkTime(m);
+                vm.time = h+":"+m;
+            };
+            
+            var checkTime = function(i) {
+                if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+            };
+            
+            $interval(setTime,500);// Busca nuevas noticias cada 8 min
         }
     ]);
     
