@@ -11,7 +11,7 @@ body {
 	/*font: bold 13px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;*/
 	font-family: "Trebuchet MS",Helvetica,Arial,sans-serif;
 	color: #4f6b72;
-	background: #014284;
+	background: #5F289F;/*#014284;*/
 	clear: both; 
 	margin: 0 auto; 
     font-size: 2em;
@@ -42,7 +42,8 @@ body {
 #cartel{
 	text-align:center;
 	padding:5px;
-	background: #ECEB58;
+	color: #fff;
+	background: #DE3111;
 	font-weight: bold;
 	font-variant: uppercase;
 	border-radius: 10px;
@@ -50,7 +51,7 @@ body {
 
 
 #recorrido{
-	border: 1px white solid;  
+
 	border-radius: 5px;
 	height: 100%;
 	margin-top:5px;
@@ -71,12 +72,12 @@ body {
 
 .odd {
 	color: #f3f3f3;
-	background: #014284;
+	background: #AE67FF;
 }
 
 .even {
 	background: #f3f3f3;
-	color: #000;
+	color: #370F65;
 }
 
 
@@ -97,8 +98,9 @@ body {
   bottom: 0;
   left: 0;
   padding: 0rem;
-  background-color: #efefef;
+  background-color: #0E7A98;
   text-align: center;
+  color: #000;
 }
 
 #footer  #noticias{
