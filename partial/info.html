@@ -1,11 +1,32 @@
 <div>
     <div id="travelSchedule" ng-controller="TravelScheduleController as travelInfo">
-        {{travelInfo.mensaje}}
+        <div id="recorridos">
+            <div id="cartel">
+                Próximas Salidas
+            </div>
+            <div id="recorrido">
+                <table id="recorrido_tabla">			
+                    <tr ng_repeat="viaje in travelInfo.viajes" class="dato odd">
+                        <td>{{viaje.hora}}</td><td>{{viaje.origen}}</td><td>{{viaje.empresa}}</td>
+                    </tr>	
+                    <!-- tr class="dato even">
+                        <td>04:35</td><td>Mar del Plata</td><td>El Cóndor</td>
+                    </tr -->	
+                </table>
+            </div>	
+        </div>
     </div>
+    
     <div id="adds" ng-controller="AddsController as adds">
-        {{adds.mensaje}}
+        <div id="publicidad">
+            lalala
+        </div>
     </div>
+    
     <div id="news" ng-controller="NewsController as news">
-        {{news.mensaje}}
+        <div id="footer">
+            <div id="noticias">{{news.activeNews}}</div>
+            <div id="reloj"></div>
+        </div>
     </div>
 </div>

@@ -37,9 +37,7 @@
             var vm = this;
             
             var onLoadContentComplete = function(response) {
-                //vm.mensaje = response.data;
                 var layout = response.data.layout;
-                //console.log(response);
                 $location.path(layout);
             };
             
@@ -61,25 +59,35 @@
         }
     ])
     
-    // OnePage Controllers
+    // travel Scheduler Controllers
     .controller('TravelScheduleController', ['$http', 
         function($http)
         {
             var vm = this;
             
-            vm.mensaje = 'Loading Travel.....';
-    //        var layout = 'init.html';
-    //        
-    //        var setLayout = function(layout) {
-    //            // $location.path("/info");
-    //        };
-    //                
-    //        var startup = function() {
-    //            setLayout(layout);
-    //            $http.get('layout/status/'+layout).then(setNextLayout, error);
-    //        };
-    //        
-    //        startup();       
+            vm.viajes = [
+                { 'hora': '00:00', 'origen': 'origen', 'destino': 'destino', 'empresa': 'empresa' },
+            ];
+            
+            var onLoadContentComplete = function(response) {
+                vm.viajes = response.data.viajes;
+            };
+            
+            var onLoadContentError = function(reason) {
+                //error
+            };
+            
+            var loadContent = function(){
+                $http
+                    .get('server/exposerver.php', {
+                        params: {
+                            'action': 'travel',  
+                        },
+                    })
+                    .then(onLoadContentComplete, onLoadContentError);
+            };
+            
+            loadContent();
             
         }
     ])
@@ -90,11 +98,51 @@
             vm.mensaje = "CARGANDO adds";
         }
     ])
-    .controller('NewsController', ['$http', 
-        function($http)
+    .controller('NewsController', ['$http', '$interval', 
+        function($http, $interval)
         {
-            var mv = this;
-            mv.mensaje = "CARGANDO news";
+            var vm = this;
+            
+            vm.id = 0;
+            
+            vm.news = [];
+            
+            vm.activeNews = 'Bienvenidos a Tandil - Lugar Soñado';
+            
+            var updateActiveNews = function() {
+                if(vm.id > vm.news.length) {
+                    vm.id = 0;
+                }  
+                else {
+                    vm.id ++;
+                    var aux = vm.news[vm.id];
+                    if(aux)
+                        vm.activeNews = aux.news;
+                }
+            };
+            
+            var onLoadContentComplete = function(response) {
+                vm.news = response.data;
+            };        
+            
+            var onLoadContentError = function(reason) {
+                //error
+            };
+            
+            var loadContent = function(){
+                $http
+                    .get('server/exposerver.php', {
+                        params: {
+                            'action': 'noticias',  
+                        },
+                    })
+                    .then(onLoadContentComplete, onLoadContentError);
+            };
+            
+            //loadContent();
+            $interval(updateActiveNews,5000);
+            $interval(loadContent,10000);
+            
         }
     ]);
     
