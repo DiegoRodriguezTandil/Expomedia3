@@ -2,7 +2,7 @@
     error_reporting(-1);
     ini_set('display_errors', 'On');
     
-    const CANTIDAD_VIAJES = 10;
+    const CANTIDAD_VIAJES = 15;
     
     include_once 'RssReader.php';
 

@@ -11,13 +11,13 @@ header, section, footer,
 aside, nav, article, figure {
   display: block;
 }
-
+/
 h2 {font-size: 1.571em} /* 22px */
 h3 {font-size: 1.429em} /* 20px */
 h4 {font-size: 1.286em} /* 18px */
 h5 {font-size: 1.143em} /* 16px */
 h6 {font-size: 1em} /* 14px */
-
+/*
 h2, h3, h4, h5, h6 {
   font-weight: 400;
   line-height: 1.1;
@@ -110,7 +110,7 @@ th {
 	text-align: left;
 	padding: 6px 6px 6px 12px;
 	background: #CAE8EA url(images/bg_header.jpg) no-repeat;
-}
+}*/
 
 /*
 th {
