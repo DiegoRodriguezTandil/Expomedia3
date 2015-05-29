@@ -20,7 +20,7 @@
             
             
 var intervalId;
-var slidetime = 1000; // milliseconds between automatic transitions
+var slidetime = 5000; // milliseconds between automatic transitions
 
 //$(document).ready(function() {	
 function slide_run() {	
