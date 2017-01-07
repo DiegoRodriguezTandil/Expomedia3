@@ -10,40 +10,21 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(__dirname+'expomedia-cli/dist'));
 
-console.log(__dirname+'/expomedia-cli/dist/');
-
-
-/* ARCHIVOS */
-app.get('/inline.bundle.js', function (req, res) {
-    res.sendFile(path.join(__dirname,'/expomedia-cli/dist/inline.bundle.js'));
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
+    next();
 });
 
-app.get('/styles.bundle.js', function (req, res) {
-    res.sendFile(path.join(__dirname,'/expomedia-cli/dist/styles.bundle.js'));
-});
-
-app.get('/main.bundle.js', function (req, res) {
-    res.sendFile(path.join(__dirname,'/expomedia-cli/dist/main.bundle.js'));
-});
-
-app.get('/*', function (req, res) {
-/*
-    // if the request is not html then move along
-    var accept = req.accepts('html', 'json', 'xml');
-    if(accept !== 'html'){
-        next();
-    }
-
-    // if the request has a '.' assume that it's for a file, move along
-    var ext = path.extname(req.path);
-    if (ext !== ''){
-        next();
-    }
-*/
-    console.log(req.accepts('html', 'json', 'xml'));
-    res.sendFile(path.join(__dirname,'/expomedia-cli/dist/index.html'));
+app.get('/', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({ 
+        a: 1,
+        b: 3,
+        c: "sdadasdasd" 
+    }));
 });
 
 // catch 404 and forward to error handler
