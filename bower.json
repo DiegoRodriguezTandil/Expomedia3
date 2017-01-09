@@ -12,12 +12,11 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "client/dev/bower_components",
+    "bower_components",
     "test",
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.1.1",
-    "timer.jquery": "^0.6.4"
+    "jquery": "^3.1.1"
   }
 }
