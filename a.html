@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ideabox News Reader</title>
+
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/ideaboxNews.css"/>
+<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
+
+<script src="js/jQuery.js"></script>
+<script src="js/jquery.mCustomScrollbar.min.js"></script>
+<script src="js/ideaboxNews.js"></script>
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin-ext' rel='stylesheet' type='text/css'>
+<!--Plugin css file ------>
+<link rel="stylesheet" type="text/css" href="css/ideaboxWeather.css"/>
+<script src="js/ideaboxWeather.js"></script>
+
+</head>
+<style>
+	body{font-family:Ubuntu, Arial, Helvetica, sans-serif; font-size:16px; font-weight:400; padding:0; margin:0; }
+	/*	.container{width:30%; height:auto; margin:100px auto 0 auto;}*/
+	header{width:100%; height:20%; background-color: blue; text-align:center; border-bottom:solid 2px #333; box-sizing:border-box;}
+	header h1{font-weight:normal; font-size:36px; padding:0; margin:0;}
+	header h3{padding:0; margin:0;}
+	header .examples{width:100%; height:auto; padding:20px 0;}
+	header .examples a{display:inline-block; padding:10px 20px; background:#333; text-decoration:none; color:#FFF;}
+	header .examples a.active{background:#C00;}
+	
+	.example_img{width:100%; text-align:center; padding:20px; box-sizing:border-box; background:#333; margin-top:50px;}
+	.example_img img{display:inline-block; width:100%;}
+	.noticias { float:left; position: absolute; margin-top: 23%;}
+	#top { height: 50px; width:100%; background-color: #5674b6; }
+</style>
+<body>
+<!-- <header>
+	<h1>Ideabox News Ticker</h1>
+    <h3>Jquery Plugin</h3>
+    <div class="examples">
+    	<a href="index.html">Relative Example</a>
+        <a class="active" href="index2.html">Left Fixed Example</a>
+        <a href="index3.html">Right Fixed Example</a>
+        <a href="index4.html">RSS Feed Example</a>
+    </div> 
+</header> -->
+<div class="container">
+    <div id='top'>kl</div>
+	<div id='clima' style="width:30%; height:40%">
+            	<!-- Plugin code start ---------->
+                <div class="ideaboxWeather" id="example5">
+                    <h1>Loading....</h1>
+                </div>
+                <!-- Plugin code end ------------>
+           
+	</div>
+    <div class="ideaboxNews in-easing noticias" id="idx1">
+    	<!--<h3>LATEST NEWS</h3>-->
+        <ul>      	 
+
+        </ul>
+        <div class="in-viewer">
+        	<div class="in-viewer-header">
+            	<img src="trash/img1.jpg">
+                <div>
+                	<h2>no title...</h2>
+                    <span>no date...</span>
+                </div>
+            </div>
+            <div class="in-viewer-content">
+            	no content...
+            </div>
+            <span class="in-viewer-close"></span>
+        </div>
+    </div>
+    
+
+</div>
+<iframe width="0" height="0" src="https://www.youtube.com/watch?v=qgYql7IaXzI" ></iframe>
+
+<script>
+	$(document).ready(function(e) {
+        $(".ideaboxNews").ideaboxNews({
+		/*	maxwidth		:'400px',
+			position		:'leftfixed',
+			openspeed		:'fast'*/
+		
+			maxwidth		:'30%',
+			newscount		:6,
+			position		:'leftfixed',
+			openspeed		:'fast',
+			headercolor		:'#FFFFFF',
+			headerbgcolor	:'#9d5454',
+		//	feedimage		:'img/in-rss-image.jpg',
+			feedimage		:'trash/img7.jpg',
+			feedcount		:4,
+			feed			:'http://www.clarin.com/rss/lo-ultimo/,http://www.nacion.com/rss/latest/?contentType=NWS',
+			feedlabels		:'Noticias ALAS',
+			feedlink		:'self', //or target
+			feedupdatetimer	:60000  //60000 ms = 1 Sec
+		});
+		
+		$('#example5').ideaboxWeather({
+			/* lang		:"sp",
+			themecolor	:"#098da1",
+			location	:"Tandil",
+			daycount	:5,
+			metric		:'C',
+			days		:["Domingo", "Lunes", "Martes", "Mi�rcoles", "Jueves", "Viernes", "S�bado"],
+			dayssmall	:["Do", "Lo", "Ma", "Mi", "Ju", "Vi", "Sa"],
+			todaytext	:'Hoy', */
+			template	:"horizontal",
+			 lang		:"sp",
+			themecolor	:"#098da1",
+			location	:"Tandil",
+			daycount	:6,
+			days		:["Domingo", "Lunes", "Martes", "Mi�rcoles", "Jueves", "Viernes", "S�bado"],
+			dayssmall	:["Do", "Lo", "Ma", "Mi", "Ju", "Vi", "Sa"],
+			metric		:'C',
+			imgpath		:"img/",
+			radius		:false
+		});
+    });
+</script>
+
+</body>
+</html>
