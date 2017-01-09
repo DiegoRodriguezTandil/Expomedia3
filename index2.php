@@ -15,6 +15,6 @@ ini_set("display_errors", 1);
         <script type="text/javascript" src="app/alas.maps.js"> </script>
     </head>
     <body>
-        <div id="gmap" style="with:300px;height:400px;"></div>
+        <div id="gmap" data-rqid="0" style="with:300px;height:400px;"></div>
     </body>
 </html>
