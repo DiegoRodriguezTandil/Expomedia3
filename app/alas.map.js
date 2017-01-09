@@ -1,3 +1,5 @@
+alert('lpm');
+
 (function($) {
 
   //start a timer
