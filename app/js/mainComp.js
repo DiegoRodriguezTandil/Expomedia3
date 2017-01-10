@@ -50,7 +50,7 @@ $(document).ready(function(e) {
 			position		:'leftfixed',
 			openspeed		:'fast'*/
 		
-			maxwidth		:'30%',
+			maxwidth		:'100%',
 			newscount		:6,
 			position		:'leftfixed',
 			openspeed		:'fast',

@@ -14,8 +14,8 @@ and open the template in the editor.
     background-color: #20526b;
     color: #FFF;
     padding:5px;
-
-    font-size: 1.7em;
+    font-family: 'Passion One', cursive;
+    font-size: 1.9em;
 }
 #textoTop {
 
@@ -47,6 +47,7 @@ html, body {
   background: white;
   padding: 0;
   margin: 0;
+  background-color: #20526b;
 }
 
 *:fullscreen

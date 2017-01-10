@@ -49,7 +49,7 @@
 			
 			function getWeather()
 			{
-				$.get("http://api.openweathermap.org/data/2.5/forecast/daily?q="+settings.location+"&mode=xml&units=metric&cnt="+settings.daycount+"&lang="+settings.lang+"&appid=0ac06341513ff205b3e3f3b6188588e3", function(data) {
+				$.get("http://api.openweathermap.org/data/2.5/forecast/daily?q="+settings.location+"&mode=xml&units=metric&cnt="+settings.daycount+"&lang="+settings.lang+"&appid=28f79c8c969306565fc3dee475aab45f", function(data) {
 					var $XML = $(data);
 					var sstr = "";
 					var location = $XML.find("name").text();
