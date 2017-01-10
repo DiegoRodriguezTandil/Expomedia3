@@ -7,7 +7,7 @@
 					position		:'relative',
 					openspeed		:'normal',
 					headercolor		:'#FFFFFF',
-					headerbgcolor	:'#9d5454',
+					headerbgcolor	:'#007FAA',
 					modulid			:'ideaboxNews',
 					feed			:false,
 					feedimage		:'img/in-rss-image.jpg',

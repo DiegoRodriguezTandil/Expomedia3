@@ -18,7 +18,8 @@
 	display: block;
 	padding: 20px;
 	box-sizing: border-box;
-	background: #723b64;
+	/*background: #723b64;*/
+        background: #007FAA;
 	color: #FFF;
 }
 .ideaboxNews>ul {

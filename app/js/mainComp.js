@@ -4,6 +4,29 @@
  * and open the template in the editor.
  */
 
+ function toggleFullScreen(elem) { 
+            if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
+              if (elem.requestFullScreen) {
+                elem.requestFullScreen();
+              } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+              } else if (elem.webkitRequestFullScreen) {
+                elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+              } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+              }
+            } else {
+              if (document.cancelFullScreen) {
+                document.cancelFullScreen();
+              } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+              } else if (document.webkitCancelFullScreen) {
+                document.webkitCancelFullScreen();
+              } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+              }
+            }
+          }
 
 $(document).ready(function(e) {
             
@@ -15,6 +38,8 @@ $(document).ready(function(e) {
         setInterval(function() { 
             var minute = start.getMinutes();
             var hour = start.getHours();
+            if (minute < 10)
+                minute = "0"+minute;
             var hora = hour +":"+minute;
             $('.Timer').text(hora);
             start = new Date;
@@ -30,7 +55,7 @@ $(document).ready(function(e) {
 			position		:'leftfixed',
 			openspeed		:'fast',
 			headercolor		:'#FFFFFF',
-			headerbgcolor	:'#9d5454',
+			headerbgcolor           :'rgba(74, 38, 106, 0.75)',
 		//	feedimage		:'img/in-rss-image.jpg',
 			feedimage		:'',
 			feedcount		:4,
@@ -50,7 +75,7 @@ $(document).ready(function(e) {
 			dayssmall	:["Do", "Lo", "Ma", "Mi", "Ju", "Vi", "Sa"],
 			todaytext	:'Hoy', */
 			template	:"horizontal",
-			 lang		:"sp",
+			lang		:"sp",
 			themecolor	:"#098da1",
 			location	:"Tandil",
 			daycount	:6,
@@ -60,5 +85,7 @@ $(document).ready(function(e) {
 			imgpath		:"img/",
 			radius		:false
 		});
+                
+       
     });
     
