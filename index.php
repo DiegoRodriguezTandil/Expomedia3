@@ -2,7 +2,7 @@
     <head> 
         <meta charset="utf-8">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin-ext' rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/css?family=Passion+One|Sigmar+One|Satisfy" rel="stylesheet" type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Passion+One|Viga|Satisfy" rel="stylesheet" type='text/css'>
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
         
         <script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyBbWhD4UD0AIkDFmxzkVFeSGNr3gSsPvvQ"></script>
