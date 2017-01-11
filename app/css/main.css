@@ -14,7 +14,7 @@ and open the template in the editor.
     background-color: #20526b;
     color: #FFF;
     padding:5px;
-    font-family: 'Passion One', cursive;
+    font-family: 'Sigmar One', cursive;
     font-size: 1.9em;
 }
 #textoTop {
@@ -28,7 +28,7 @@ and open the template in the editor.
 .textR{
     float: right;
     margin-top: 0.7em;
-    margin-right: 3em;
+    margin-right: 4em;
 }
 
 .noticias{

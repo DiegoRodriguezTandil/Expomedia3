@@ -2,7 +2,7 @@
     <head> 
         <meta charset="utf-8">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin-ext' rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/css?family=Passion+One|Pacifico|Satisfy" rel="stylesheet" type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Passion+One|Sigmar+One|Satisfy" rel="stylesheet" type='text/css'>
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
         
         <script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyBbWhD4UD0AIkDFmxzkVFeSGNr3gSsPvvQ"></script>
@@ -23,7 +23,7 @@
         <div class="container">
             <div id="top">                
                 <div id="textoTop" >
-                    <img src="img/logo_blanco.png" style="float:left; margin-left: 1em; margin-top: 0.2em;" onclick="toggleFullScreen(document.body)" />
+                    <img src="img/logo_blanco.png" style="float:left; margin-left: 1em;" onclick="toggleFullScreen(document.body)" />
                     <div class="text">Al servicio de Tandil - Las 24 hs. </div>
                     <div class="textR Timer">                        
                     </div>
