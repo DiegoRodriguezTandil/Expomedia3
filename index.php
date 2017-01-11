@@ -23,7 +23,7 @@
         <div class="container">
             <div id="top">                
                 <div id="textoTop" >
-                    <img src="img/logo_blanco.png" style="float:left; margin-left: 1em;" onclick="toggleFullScreen(document.body)" />
+                    <img src="img/logo_blanco.png" style="float:left; margin-top: 0.2em; margin-left: 1em;" onclick="toggleFullScreen(document.body)" />
                     <div class="text">Al servicio de Tandil - Las 24 hs. </div>
                     <div class="textR Timer">                        
                     </div>
