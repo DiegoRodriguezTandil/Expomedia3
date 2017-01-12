@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07/01/2017, 20:29:17
+    Author     : koqui
+*/
+
+#top {
+    height: 3em;
+    width: 100%;
+    background-color: #20526b;
+    color: #FFF;
+    padding:5px;
+    font-family: 'Viga', sans-serif;
+    font-size: 1.9em;
+}
+#textoTop {
+
+}
+.text{
+    float: left;
+    margin-top: 0.7em;
+    margin-left: 4em;
+}
+.textR{
+    float: right;
+    margin-top: 0.7em;
+    margin-right: 5em;
+}
+
+.noticias{
+    position: relative;
+}
+
+body{
+    font-family:Ubuntu, Arial, Helvetica, sans-serif; 
+    font-size:16px; 
+    font-weight:400; 
+    padding:0; 
+    margin:0; 
+}
+
+html, body {
+  background: white;
+  padding: 0;
+  margin: 0;
+  background-color: #20526b;
+}
+
+*:fullscreen
+*:-ms-fullscreen,
+*:-webkit-full-screen,
+*:-moz-full-screen {
+   overflow: auto !important;
+}
