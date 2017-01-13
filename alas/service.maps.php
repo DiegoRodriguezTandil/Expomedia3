@@ -71,7 +71,7 @@ ini_set("display_errors", 1);
             'L' => "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
             'O' => "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
             'S' => "http://maps.google.com/mapfiles/markerS.png",
-            'Z' => "http://maps.google.com/mapfiles/marker_green.png",
+            'Z' => "http://maps.google.com/mapfiles/ms/icons/ltblue-dot.png",
             'C' => "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
         ];
         $positions = [];

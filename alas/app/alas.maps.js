@@ -13,10 +13,7 @@ $(function() {
         }
     }).Load();
     
-    setTimeout(
-            GoogleMapUpdate,
-            REFRESH_TIME
-    );
+    GoogleMapUpdate();
 
     
 });

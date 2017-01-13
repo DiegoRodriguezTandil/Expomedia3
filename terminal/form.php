@@ -90,20 +90,20 @@
                             <!--<input type="text" class="form-control" id="Hora" placeholder="Ingrese un Horario">-->
                             <input type="text" class="form-control" name="hora" placeholder="HH:mm"
                                    pattern="^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$" id="Hora"
-                                   data-fv-regexp-message="La hora debe ser de la forma 19:34" value="<?php $row['hora']?>" >
+                                   data-fv-regexp-message="La hora debe ser de la forma 19:34" value="<?php echo $row['hora']?>" >
                         </div>
                         <div class="col-lg-3">
                             <label for="empresa">Empresa</label>
-                            <input type="text" class="form-control" name="empresa" id="Empresa" placeholder="Ingrese Nombre de la Empresa" value="<?php $row['empresa']?>">
+                            <input type="text" class="form-control" name="empresa" id="Empresa" placeholder="Ingrese Nombre de la Empresa" value="<?php echo $row['empresa']?>">
                         </div>
 
                          <div class="col-lg-3">
                                 <label for="empresa">Procedencia</label>
-                                <input type="text" class="form-control" id="Procedencia" placeholder="Ingrese Procedencia" name="procedencia" value="<?php $row['procedencia']?>">
+                                <input type="text" class="form-control" id="Procedencia" placeholder="Ingrese Procedencia" name="procedencia" value="<?php echo $row['procedencia']?>">
                             </div>
                             <div class="col-lg-3">
                                 <label for="empresa">Destino</label>
-                                <input type="text" class="form-control" id="Destino" placeholder="Ingrese Destino" name="destino" value="<?php $row['destino']?>">
+                                <input type="text" class="form-control" id="Destino" placeholder="Ingrese Destino" name="destino" value="<?php echo $row['destino']?>">
                             </div>
                         </div>  
                         <div class="row">                            
@@ -115,35 +115,35 @@
                                 </style>
                                 <div class="col-lg-1">
                                     <label for="dia-lunes">Lunes</label>
-                                    <input type="checkbox" class="form-control" id="Dia-lunes" name="lunes" <?php $row['dia']['lunes']==1?'checked':''?> >
+                                    <input type="checkbox" class="form-control" id="Dia-lunes" name="lunes" <?php echo $row['dia']['lunes']==1?'checked':''?> >
                                 </div> 
                                 <div class="col-lg-1 inputDias">
                                     <label for="dia-">Martes</label>
-                                    <input type="checkbox" class="form-control" id="dia-martes" name="martes" <?php $row['dia']['martes']==1?'checked':''?>>
+                                    <input type="checkbox" class="form-control" id="dia-martes" name="martes" <?php echo $row['dia']['martes']==1?'checked':''?>>
                                 </div> 
                                 <div class="col-lg-1 inputDias">
                                     <label for="dia-">Miércoles</label>
-                                    <input type="checkbox" class="form-control" id="dia-miercoles" name="miercoles" <?php $row['dia']['miercoles']==1?'checked':''?>>
+                                    <input type="checkbox" class="form-control" id="dia-miercoles" name="miercoles" <?php echo $row['dia']['miercoles']==1?'checked':''?>>
                                 </div> 
                                 <div class="col-lg-1 inputDias">
                                     <label for="dia-">Jueves</label>
-                                    <input type="checkbox" class="form-control" id="dia-jueves" name="jueves" <?php $row['dia']['jueves']==1?'checked':''?>>
+                                    <input type="checkbox" class="form-control" id="dia-jueves" name="jueves" <?php  echo $row['dia']['jueves']==1?'checked':''?>>
                                 </div> 
                                 <div class="col-lg-1 inputDias">
                                     <label for="dia-">Viernes</label>
-                                    <input type="checkbox" class="form-control" id="dia-viernes" name="viernes" <?php $row['dia']['viernes']==1?'checked':''?>>
+                                    <input type="checkbox" class="form-control" id="dia-viernes" name="viernes" <?php  echo $row['dia']['viernes']==1?'checked':''?>>
                                 </div> 
                                 <div class="col-lg-1 inputDias">
                                     <label for="dia-">Sabado</label>
-                                    <input type="checkbox" class="form-control" id="dia-sabado" name="sabado" <?php $row['dia']['sabado']==1?'checked':''?>>
+                                    <input type="checkbox" class="form-control" id="dia-sabado" name="sabado" <?php  echo $row['dia']['sabado']==1?'checked':''?>>
                                 </div> 
                                 <div class="col-lg-1 inputDias">
                                     <label for="dia-">Domingo</label>
-                                    <input type="checkbox" class="form-control" id="dia-domingo" name="domingo" <?php $row['dia']['domingo']==1?'checked':''?>>
+                                    <input type="checkbox" class="form-control" id="dia-domingo" name="domingo" <?php  echo $row['dia']['domingo']==1?'checked':''?>>
                                 </div> 
                                 <div class="col-lg-1 inputDias">
                                     <label for="dia-">Feriado</label>
-                                    <input type="checkbox" class="form-control" id="dia-feriado" name="feriado" <?php $row['dia']['feriado']==1?'checked':''?>>
+                                    <input type="checkbox" class="form-control" id="dia-feriado" name="feriado" <?php  echo $row['dia']['feriado']==1?'checked':''?>>
                                 </div>                                                                                                                                             
 
                           </div>  
