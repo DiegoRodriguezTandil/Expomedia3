@@ -5,7 +5,7 @@ $aux = [];
 if ($handle) {
     while (($line = fgets($handle)) !== false) {
         $a = explode(';', $line);
-        $aux[$a[0].'##'.str_replace(' ', '_',$a[1])] = [
+        $aux[$a[0].'____'.str_replace(' ', '_',$a[1])] = [
             "hora"    =>  $a[0],
             "empresa" =>  $a[1],
             "procedencia" =>  $a[2],

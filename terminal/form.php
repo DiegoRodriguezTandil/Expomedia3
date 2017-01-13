@@ -56,9 +56,41 @@
             
             <script src="app/js/mainComp.js"></script>
     </head>
-  <body>
+    <body>
     
     <div class="container">
+<<<<<<< HEAD
+        <h2>Crear / Actualizar movimiento </h2>
+        <div class="row">
+            <?php
+            if (!isset($_GET['id'])) {
+                $id = $_GET['id'];
+                $action = "index.php?r=crear";
+            } else {
+                $action = 'index.php?r=actualizar&id=' . $id . "'";
+            }
+            ?>
+            <form id="meetingForm" class="form-horizontal"
+                  data-fv-framework="bootstrap"
+                  data-fv-icon-valid="glyphicon glyphicon-ok"
+                  data-fv-icon-invalid="glyphicon glyphicon-remove"
+                  data-fv-icon-validating="glyphicon glyphicon-refresh">
+                <div clas="col-md-6 col-md-offset-6" style="margin-top:5%; margin-left:15%;">
+
+                    <div class="row">
+
+                        <div class="col-lg-2">
+                            <label for="Hora">Hora</label>
+                            <!--<input type="text" class="form-control" id="Hora" placeholder="Ingrese un Horario">-->
+                            <input type="text" class="form-control" name="time" placeholder="HH:mm"
+                                   pattern="^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$" id="Hora"
+                                   data-fv-regexp-message="La hora debe ser de la forma 19:34" />
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="empresa">Empresa</label>
+                            <input type="text" class="form-control" id="Empresa" placeholder="Ingrese Nombre de la Empresa">
+                        </div>
+=======
     <h2>Crear / Actualizar movimiento </h2>
       <div class="row">
         <div class="col-lg-12"></div>
@@ -77,6 +109,7 @@
                             <label for="empresa">Empresa</label>
                             <input type="text" class="form-control" id="Empresa" placeholder="Ingrese Nombre de la Empresa" name="empresa" value="<?php $row['empresa']?>">
                          </div>
+>>>>>>> 5af6d8f79852b6a2bb6718b43ef778fcba0c2e83
                         <div class="col-lg-3">
                             <label for="empresa">Procedencia</label>
                             <input type="text" class="form-control" id="Procedencia" placeholder="Ingrese Procedencia" name="procedencia" value="<?php $row['procedencia']?>">
@@ -126,17 +159,20 @@
                                 <input type="checkbox" class="form-control" id="dia-feriado" name="feriado" <?php $row['dia']['feriado']==1?'checked':''?>>
                             </div>                                                                                                                                             
 
-                      </div>  
+                    </div>  
                 </div>            
                 <div class="row">
-                     <div class="col-lg-12" style="margin-top:2%;  float: left;">
+                    <div class="col-lg-12" style="margin-top:2%;  float: left;">
                         <button type="submit" class="btn btn-default">Guardar</button>
                     </div>
-                 </div>
-              </form>
+                </div>
+            </form>
           </div>
-     </div>
-
-    </div><!-- /.container -->
+    </div>
   </body>
+  <script>
+$(document).ready(function() {
+    $('#meetingForm').formValidation();
+});
+</script>
 </html>
