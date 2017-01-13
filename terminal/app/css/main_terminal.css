@@ -1,0 +1,123 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07/01/2017, 20:29:17
+    Author     : koqui
+*/
+
+
+/* latin-ext */
+@font-face {
+  font-family: 'Viga';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/WaD5umPYwC0_59FEtsVqIA.woff2") format('woff2');
+}
+/* latin */
+@font-face {
+  font-family: 'Viga';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/ysvjm4ygfCN9igDTKjiHkg.woff2") format('woff2');
+}
+
+body {
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #337ab7),
+        color-stop(0.5, #63d3e9), color-stop(1, #006db5));
+    padding:0; 
+    margin:0; 
+}
+
+
+top {
+    display: table;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    color: #FFF;    
+    font-family: 'Viga', sans-serif;
+    font-size: 3.5em;
+}
+span {
+    display: table-cell;
+    vertical-align: middle;
+}
+.Timer{
+    float: right;
+    margin-right: 5%;
+}
+
+.mdl-data-table {
+    width: 96%;
+    margin-left: 2%;
+    font-size: 1.6em;
+}
+
+
+.thead-inverse{
+    background-color: #f50057;/*#3949AB;*/
+    color: #FFF;
+}
+
+.mdl-data-table th {
+    color: #FFF;
+    font-size: 1.3em;
+};
+.mdl-data-table__cell--non-numeric{
+    text-align: center;
+    
+}
+.importante{
+    font-weight: 700;
+}
+
+footer{
+    height: 60px; 
+    /*background:black;*/ 
+    width:100%; 
+    position:absolute; 
+    bottom:0; 
+    left:0; 
+    text-align: right;
+    padding-right: 0.4em;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+    /*
+#top {
+    height: 3em;
+    width: 100%;
+
+    color: #FFF;
+    margin:1%;
+    margin-right: 4%;
+    font-family: 'Viga', sans-serif;
+    font-size: 1.9em;
+
+  display: table;
+  width: 250px;
+  height: 100px;
+  text-align: center;
+}
+
+.text {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.textR{
+    float: right;
+}*/
+
+*:fullscreen
+*:-ms-fullscreen,
+*:-webkit-full-screen,
+*:-moz-full-screen {
+   overflow: auto !important;
+}
