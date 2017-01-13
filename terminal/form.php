@@ -34,10 +34,19 @@
     </div>
     <div class="container" >
       <div class"row">
-   <?php if(!isset($_GET['id'])){} ?>
+   <?php
+
+     if(!isset($_GET['id'])){
+        $id=$_GET['id'];
+            $action= "index.php?r=crear";
+    }else{
+          $action= 'index.php?r=actualizar&id='.$id."'";
+        }        
+
+    ?>
 
           <div clas="col-md-6 col-md-offset-6" style="margin-top:5%; margin-left:15%;">
-                <form class="col-lg-10" action="index.php?r=listar">
+                <form class="col-lg-10" action=<?=$action?> >
                  <div class"row">
                     <div class"row">
                         <div class="col-lg-2">
