@@ -6,21 +6,21 @@ $(function() {
 });
 
 function ObtenerViajes() {
-    $.ajax({
-        url: "service.viajes.php",
-        dataType: "json",
-        data: {
-            cantidad_viajes: 10,
-        },
-        success: function(response) {
-            console.log(response);
-            $.each(response.viajes,function(i,viaje){
-                content +='<tr><td class="mdl-data-table__cell--non-numeric importante">'+viaje[i].hora+'</td>'+
-                        '<td class="mdl-data-table__cell--non-numeric importante">'+viaje[i].empresa+'</td>'+
-                        '<td class="mdl-data-table__cell--non-numeric ">'+viaje[i].procedencia+'</td>'+
-                        '<td class="mdl-data-table__cell--non-numeric importante">'+viaje[i].destino+'</td></tr>';
+    
+    
+    $.ajax({ 
+        url: 'service.viajes.php', 
+        data: { cantidad_viajes: '15' }, 
+        dataType: 'json',
+        success: function (data) {  
+            var content = "";
+            $.each(data.viajes,function(i,viaje){
+                content = content + '<tr><td class="mdl-data-table__cell--non-numeric importante">'+data.viajes[i].hora+'</td>'+
+                        '<td class="mdl-data-table__cell--non-numeric importante">'+data.viajes[i].empresa+'</td>'+
+                        '<td class="mdl-data-table__cell--non-numeric ">'+data.viajes[i].procedencia+'</td>'+
+                        '<td class="mdl-data-table__cell--non-numeric importante">'+data.viajes[i].destino+'</td></tr>';
             });
-            $('#viajes').append(content);
+            $('#viajes').html(content);
         }
     });
     
