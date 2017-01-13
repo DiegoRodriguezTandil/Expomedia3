@@ -6,14 +6,14 @@ ini_set("display_errors", 1);
     /**
      * Cantidad de Viajes
      */
-    $cantidad_viajes = filter_input(INPUT_POST, "cantidad_viajes", FILTER_VALIDATE_INT, 
+    $cantidad_viajes = filter_input(INPUT_GET, "cantidad_viajes", FILTER_VALIDATE_INT, 
             array("options" => array(
                 "default" => 10,
                 "min_range" => 0
             ))
     );
 
-    var_dump($cantidad_viajes);
+//    var_dump($cantidad_viajes);
 /**
  * Viajes
  * viajes = [
@@ -112,7 +112,7 @@ ini_set("display_errors", 1);
     
 
     echo json_encode([
-        "viajes" => $horarios_mostrar,
+        "viajes" => $horarios_mostrar
     ]);
 
     exit;

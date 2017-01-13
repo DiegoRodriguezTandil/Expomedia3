@@ -30,42 +30,7 @@
                     </tr>
                 </thead>
                 <tbody id="viajes">                    
-                    <tr>                        
-                        <td class="mdl-data-table__cell--non-numeric importante">12:25</td>
-                        <td class="mdl-data-table__cell--non-numeric importante">Empresa</td>
-                        <td class="mdl-data-table__cell--non-numeric">Procedendia1</td>
-                        <td class="mdl-data-table__cell--non-numeric importante">Destino</td>
-                    </tr>
-                                        <tr>                        
-                        <td class="mdl-data-table__cell--non-numeric importante">12:25</td>
-                        <td class="mdl-data-table__cell--non-numeric importante">Empresa</td>
-                        <td class="mdl-data-table__cell--non-numeric">Procedendia1</td>
-                        <td class="mdl-data-table__cell--non-numeric importante">Destino</td>
-                    </tr>                    
-                    <tr>                        
-                        <td class="mdl-data-table__cell--non-numeric importante">12:25</td>
-                        <td class="mdl-data-table__cell--non-numeric importante">Empresa</td>
-                        <td class="mdl-data-table__cell--non-numeric">Procedendia1</td>
-                        <td class="mdl-data-table__cell--non-numeric importante">Destino</td>
-                    </tr>                    
-                    <tr>                        
-                        <td class="mdl-data-table__cell--non-numeric importante">12:25</td>
-                        <td class="mdl-data-table__cell--non-numeric importante">Empresa</td>
-                        <td class="mdl-data-table__cell--non-numeric">Procedendia1</td>
-                        <td class="mdl-data-table__cell--non-numeric importante">Destino</td>
-                    </tr>                   
-                    <tr>                        
-                        <td class="mdl-data-table__cell--non-numeric importante">12:25</td>
-                        <td class="mdl-data-table__cell--non-numeric importante">Empresa</td>
-                        <td class="mdl-data-table__cell--non-numeric">Procedendia1</td>
-                        <td class="mdl-data-table__cell--non-numeric importante">Destino</td>
-                    </tr>
-                                        <tr>                        
-                        <td class="mdl-data-table__cell--non-numeric importante">12:25</td>
-                        <td class="mdl-data-table__cell--non-numeric importante">Empresa</td>
-                        <td class="mdl-data-table__cell--non-numeric">Procedendia1</td>
-                        <td class="mdl-data-table__cell--non-numeric importante">Destino</td>
-                    </tr>
+                    
                 </tbody>
             </table>     
             <footer>
