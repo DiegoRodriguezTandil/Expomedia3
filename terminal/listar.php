@@ -15,7 +15,7 @@
             ))
     );
 
-    if ($action && ($action = 'guardar')) {
+    if ($action && ($action === 'guardar')) {
         // LEE DATOS GET
         $hora = filter_input(INPUT_GET, "hora");
         $empresa = $_GET['empresa'];
@@ -54,12 +54,15 @@
         ];
         saveToFile($arrayViajes);
     }
-    else if ($action && ($action = 'eliminar')) {
+    else if ($action && ($action === 'eliminar')) {
         if( ($id != 'NULL') && array_key_exists($id, $arrayViajes)){
             unset($arrayViajes[$id]);
             saveToFile($arrayViajes);
         }        
         // ERROR
+        echo "Error,404 . ";
+        echo "<a href="."listar.php>  Volver a Listar</a><span></span>";
+           
     }
     
 ?>    
@@ -78,72 +81,72 @@
 
     <body class="admin">
             
-    <div class="container">
-    <div class="row">
-        <top class="admin">
-            <img src="images/tandil_logo.png" style="margin-top: 0.3em;" />
-            <span>TERMINAL TANDIL - Movimiento diario
-            <div class="Timer"></div></span>
-        </top>    
-    </div>
-     <div class="row">
-        <div class="table-responsive col-lg-11">
-          <table class="table col-lg-8">
-            <thead class="thead-inverse">
-              <tr>
-              <!--<span class=" .fa-pencil-square-o"></span><span class="fa fa-pencil"></span>-->
-                <th>Acciones </th>
-                <th>Hora</th>
-                <th>Empresa</th>
-                <th>Procedencia</th>
-                <th>Destino</th>
-                <th>Lun</th>
-                <th>Mar</th>
-                <th>Mié</th>
-                <th>Jue</th>
-                <th>Vie</th>
-                <th>Sab</th>
-                <th>Dom</th>
-                <th>Feriado</th>
-              </tr>
-            </thead>
-            <tbody>
-                      <?php  
-                      foreach($arrayViajes as $t=>$param){ ?>
-                          <tr>
-                              <td>
-                                  <?=  "<a href="."form.php?r=actualizar&id=".$t.">Actualizar</a><span></span>" ?> 
-                                  <?=  "<a href="."listar.php?r=eliminar&id=".$t.">Eliminar</a>" ?>    
-                              </td>                                     
-                              <?php 
-                              foreach($param as $p=>$v){
-                                  if(!is_array($v)){ ?>
-                                    <td>
-                                      <strong>
-                                        <?=$v;?>
-                                      </strong>  
-                                    </td>   
-                              <?php }else{ 
-                                          foreach($v as $d=>$dv){ ?>
-                                                  <td>
-                                                  <?php if($dv==="1")echo "<strong>SI</strong>";
-                                                        else echo "<strong>NO</strong>";;
-                                                   ?>
-                                                  </td>
-                                      <?php } ?>
-                                   <?php } ?>
-                              <?php } ?>
-                          </tr>
-                   <?php } ?>
-            </tbody>
-          </table>
-         </div>
+      <div class="container">
+      <div class="row">
+          <top class="admin">
+              <img src="images/tandil_logo.png" style="margin-top: 0.3em;" />
+              <span>TERMINAL TANDIL - Movimiento diario
+              <div class="Timer"></div></span>
+          </top>    
       </div>
-    </div><!-- /.container -->
+       <div class="row">
+          <div class="table-responsive col-lg-11">
+            <table class="table col-lg-8">
+              <thead class="thead-inverse">
+                <tr>
+                <!--<span class=" .fa-pencil-square-o"></span><span class="fa fa-pencil"></span>-->
+                  <th>Acciones </th>
+                  <th>Hora</th>
+                  <th>Empresa</th>
+                  <th>Procedencia</th>
+                  <th>Destino</th>
+                  <th>Lun</th>
+                  <th>Mar</th>
+                  <th>Mié</th>
+                  <th>Jue</th>
+                  <th>Vie</th>
+                  <th>Sab</th>
+                  <th>Dom</th>
+                  <th>Feriado</th>
+                </tr>
+              </thead>
+              <tbody>
+              <?php  
+              foreach($arrayViajes as $t=>$param){ ?>
+                  <tr>
+                      <td>
+                          <?=  "<a href="."form.php?r=actualizar&id=".$t.">Actualizar</a><span></span>" ?> 
+                          <?=  "<a href="."listar.php?r=eliminar&id=".$t.">Eliminar</a>" ?>    
+                      </td>                                     
+                      <?php 
+                      foreach($param as $p=>$v){
+                          if(!is_array($v)){ ?>
+                            <td>
+                              <strong>
+                                <?=$v;?>
+                              </strong>  
+                            </td>   
+                      <?php }else{ 
+                                  foreach($v as $d=>$dv){ ?>
+                                          <td>
+                                          <?php if($dv==="1")echo "<strong>SI</strong>";
+                                                else echo "<strong>NO</strong>";;
+                                           ?>
+                                          </td>
+                              <?php } ?>
+                           <?php } ?>
+                      <?php } ?>
+                  </tr>
+           <?php } ?>
+              </tbody>
+            </table>
+           </div>
+        </div>
+      </div><!-- /.container -->
 
-        <footer>
-            <img src="images/logo-qwavee-blanco.png" width="200px" style="margin-top: 0.3em;"  />
-        </footer>
-    </body>
+      <footer>
+          <img src="images/logo-qwavee-blanco.png" width="200px" style="margin-top: 0.3em;"  />
+      </footer>
+  </body>
 
 </html>

@@ -38,7 +38,10 @@
         if(array_key_exists($id, $arrayViajes)){
             $row = $arrayViajes[$id];
         }else{
-             die('CLAVE NO EXISTE. NO ES POSIBLE MODIFICAR');
+              // ERROR
+                echo "Error,404";
+                echo "<a href="."listar.php>Volver a Listar</a><span></span>";
+                die();
              }
     }
 
@@ -58,8 +61,9 @@
     </head>
     <body>
     
+
     <div class="container">
-<<<<<<< HEAD
+
         <h2>Crear / Actualizar movimiento </h2>
         <div class="row">
             <?php
@@ -74,7 +78,9 @@
                   data-fv-framework="bootstrap"
                   data-fv-icon-valid="glyphicon glyphicon-ok"
                   data-fv-icon-invalid="glyphicon glyphicon-remove"
-                  data-fv-icon-validating="glyphicon glyphicon-refresh">
+                  data-fv-icon-validating="glyphicon glyphicon-refresh" 
+                  method="GET" 
+                  action=<?php echo "listar.php?r=guardar&id={$id}" ?> >
                 <div clas="col-md-6 col-md-offset-6" style="margin-top:5%; margin-left:15%;">
 
                     <div class="row">
@@ -82,93 +88,77 @@
                         <div class="col-lg-2">
                             <label for="Hora">Hora</label>
                             <!--<input type="text" class="form-control" id="Hora" placeholder="Ingrese un Horario">-->
-                            <input type="text" class="form-control" name="time" placeholder="HH:mm"
+                            <input type="text" class="form-control" name="hora" placeholder="HH:mm"
                                    pattern="^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$" id="Hora"
-                                   data-fv-regexp-message="La hora debe ser de la forma 19:34" />
+                                   data-fv-regexp-message="La hora debe ser de la forma 19:34" value="<?php $row['hora']?>" >
                         </div>
                         <div class="col-lg-3">
                             <label for="empresa">Empresa</label>
-                            <input type="text" class="form-control" id="Empresa" placeholder="Ingrese Nombre de la Empresa">
+                            <input type="text" class="form-control" name="empresa" id="Empresa" placeholder="Ingrese Nombre de la Empresa" value="<?php $row['empresa']?>">
                         </div>
-=======
-    <h2>Crear / Actualizar movimiento </h2>
-      <div class="row">
-        <div class="col-lg-12"></div>
-      </div>
-    </div>
-    <div class="container" >
-      <div class"row">
-          <div clas="col-md-6 col-md-offset-6" style="margin-top:5%; margin-left:15%;">
-              <form class="col-lg-10" method="GET" action=<?php echo "listar.php?r=guardar&id={$id}" ?> >
-                 <div class="row">
-                        <div class="col-lg-2">
-                            <label for="Hora">Hora</label>
-                            <input type="text" class="form-control" id="Hora"  placeholder="Ingrese un Horario" name="hora" value="<?php $row['hora']?>" >
-                         </div>
-                        <div class="col-lg-3">
-                            <label for="empresa">Empresa</label>
-                            <input type="text" class="form-control" id="Empresa" placeholder="Ingrese Nombre de la Empresa" name="empresa" value="<?php $row['empresa']?>">
-                         </div>
->>>>>>> 5af6d8f79852b6a2bb6718b43ef778fcba0c2e83
-                        <div class="col-lg-3">
-                            <label for="empresa">Procedencia</label>
-                            <input type="text" class="form-control" id="Procedencia" placeholder="Ingrese Procedencia" name="procedencia" value="<?php $row['procedencia']?>">
-                        </div>
-                        <div class="col-lg-3">
-                            <label for="empresa">Destino</label>
-                            <input type="text" class="form-control" id="Destino" placeholder="Ingrese Destino" name="destino" value="<?php $row['destino']?>">
-                        </div>
-                    </div>  
-                    <div class="row">                            
-                            <h3 style="margin-top:5%; margin-button:5%; ">Selecione los días </h3>
-                            <style type="text/css">
-                                .inputDias{
-                                    margin-left:10px;
-                                }
-                            </style>
-                            <div class="col-lg-1">
-                                <label for="dia-lunes">Lunes</label>
-                                <input type="checkbox" class="form-control" id="Dia-lunes" name="lunes" <?php $row['dia']['lunes']==1?'checked':''?> >
-                            </div> 
-                            <div class="col-lg-1 inputDias">
-                                <label for="dia-">Martes</label>
-                                <input type="checkbox" class="form-control" id="dia-martes" name="martes" <?php $row['dia']['martes']==1?'checked':''?>>
-                            </div> 
-                            <div class="col-lg-1 inputDias">
-                                <label for="dia-">Miércoles</label>
-                                <input type="checkbox" class="form-control" id="dia-miercoles" name="miercoles" <?php $row['dia']['miercoles']==1?'checked':''?>>
-                            </div> 
-                            <div class="col-lg-1 inputDias">
-                                <label for="dia-">Jueves</label>
-                                <input type="checkbox" class="form-control" id="dia-jueves" name="jueves" <?php $row['dia']['jueves']==1?'checked':''?>>
-                            </div> 
-                            <div class="col-lg-1 inputDias">
-                                <label for="dia-">Viernes</label>
-                                <input type="checkbox" class="form-control" id="dia-viernes" name="viernes" <?php $row['dia']['viernes']==1?'checked':''?>>
-                            </div> 
-                            <div class="col-lg-1 inputDias">
-                                <label for="dia-">Sabado</label>
-                                <input type="checkbox" class="form-control" id="dia-sabado" name="sabado" <?php $row['dia']['sabado']==1?'checked':''?>>
-                            </div> 
-                            <div class="col-lg-1 inputDias">
-                                <label for="dia-">Domingo</label>
-                                <input type="checkbox" class="form-control" id="dia-domingo" name="domingo" <?php $row['dia']['domingo']==1?'checked':''?>>
-                            </div> 
-                            <div class="col-lg-1 inputDias">
-                                <label for="dia-">Feriado</label>
-                                <input type="checkbox" class="form-control" id="dia-feriado" name="feriado" <?php $row['dia']['feriado']==1?'checked':''?>>
-                            </div>                                                                                                                                             
 
-                    </div>  
-                </div>            
-                <div class="row">
-                    <div class="col-lg-12" style="margin-top:2%;  float: left;">
-                        <button type="submit" class="btn btn-default">Guardar</button>
-                    </div>
-                </div>
-            </form>
-          </div>
-    </div>
+                         <div class="col-lg-3">
+                                <label for="empresa">Procedencia</label>
+                                <input type="text" class="form-control" id="Procedencia" placeholder="Ingrese Procedencia" name="procedencia" value="<?php $row['procedencia']?>">
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="empresa">Destino</label>
+                                <input type="text" class="form-control" id="Destino" placeholder="Ingrese Destino" name="destino" value="<?php $row['destino']?>">
+                            </div>
+                        </div>  
+                        <div class="row">                            
+                                <h3 style="margin-top:5%; margin-button:5%; ">Selecione los días </h3>
+                                <style type="text/css">
+                                    .inputDias{
+                                        margin-left:10px;
+                                    }
+                                </style>
+                                <div class="col-lg-1">
+                                    <label for="dia-lunes">Lunes</label>
+                                    <input type="checkbox" class="form-control" id="Dia-lunes" name="lunes" <?php $row['dia']['lunes']==1?'checked':''?> >
+                                </div> 
+                                <div class="col-lg-1 inputDias">
+                                    <label for="dia-">Martes</label>
+                                    <input type="checkbox" class="form-control" id="dia-martes" name="martes" <?php $row['dia']['martes']==1?'checked':''?>>
+                                </div> 
+                                <div class="col-lg-1 inputDias">
+                                    <label for="dia-">Miércoles</label>
+                                    <input type="checkbox" class="form-control" id="dia-miercoles" name="miercoles" <?php $row['dia']['miercoles']==1?'checked':''?>>
+                                </div> 
+                                <div class="col-lg-1 inputDias">
+                                    <label for="dia-">Jueves</label>
+                                    <input type="checkbox" class="form-control" id="dia-jueves" name="jueves" <?php $row['dia']['jueves']==1?'checked':''?>>
+                                </div> 
+                                <div class="col-lg-1 inputDias">
+                                    <label for="dia-">Viernes</label>
+                                    <input type="checkbox" class="form-control" id="dia-viernes" name="viernes" <?php $row['dia']['viernes']==1?'checked':''?>>
+                                </div> 
+                                <div class="col-lg-1 inputDias">
+                                    <label for="dia-">Sabado</label>
+                                    <input type="checkbox" class="form-control" id="dia-sabado" name="sabado" <?php $row['dia']['sabado']==1?'checked':''?>>
+                                </div> 
+                                <div class="col-lg-1 inputDias">
+                                    <label for="dia-">Domingo</label>
+                                    <input type="checkbox" class="form-control" id="dia-domingo" name="domingo" <?php $row['dia']['domingo']==1?'checked':''?>>
+                                </div> 
+                                <div class="col-lg-1 inputDias">
+                                    <label for="dia-">Feriado</label>
+                                    <input type="checkbox" class="form-control" id="dia-feriado" name="feriado" <?php $row['dia']['feriado']==1?'checked':''?>>
+                                </div>                                                                                                                                             
+
+                          </div>  
+                    </div>            
+                    <div class="row">
+                         <div class="col-lg-12" style="margin-top:2%;  float: left;">
+                            <button type="submit" class="btn btn-default">Guardar</button>
+                        </div>
+                     </div>
+                  </form>
+              </div>
+         </div>
+
+        </div><!-- /.container -->
+
   </body>
   <script>
 $(document).ready(function() {
