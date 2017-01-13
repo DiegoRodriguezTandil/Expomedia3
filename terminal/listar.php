@@ -1,62 +1,57 @@
 <html>
     <head> 
-              <?php $arrayViajes= array('10:00*pp'=>array(
-                                                    'hora'=>'22',
-                                                    'empresa'=>'el rapido',
-                                                    'procedencia'=>'Lapida',
-                                                    'destino'=>'Azul',
-                                                    'dia'=>array(
-                                                            'lunes'=>'1',
-                                                            'martes'=>'0',                                                            'lunes'=>'si',
-                                                            'miercoles'=>'1',                                                            'lunes'=>'si',
-                                                            'jueves'=>'0',                                                            'lunes'=>'si',
-                                                            'viernes'=>'0',                                                            'lunes'=>'si',
-                                                            'sabado'=>'0',                                                            'lunes'=>'si',
-                                                            'domingo'=>'0',                                                            'lunes'=>'si',
-                                                            'feriado'=>'1',
-                                                            )
-                                                    ),'11:00*pp'=>array(
-                                                    'hora'=>'14',
-                                                    'empresa'=>'Rio Parana',
-                                                    'procedencia'=>'Juarez',
-                                                    'destino'=>'Azul',
-                                                    'dia'=>array(
-                                                            'lunes'=>'1',
-                                                            'martes'=>'0',                                                            'lunes'=>'si',
-                                                            'miercoles'=>'1',                                                            'lunes'=>'si',
-                                                            'jueves'=>'0',                                                            'lunes'=>'si',
-                                                            'viernes'=>'0',                                                            'lunes'=>'si',
-                                                            'sabado'=>'0',                                                            'lunes'=>'si',
-                                                            'domingo'=>'0',                                                            'lunes'=>'si',
-                                                            'feriado'=>'1',
-                                                            )
-                                                    )
-                                        );?>
+               <?php 
+            // $arrayViajes= array('10:00*pp'=>array(
+              //                                       'hora'=>'22',
+              //                                       'empresa'=>'el rapido',
+              //                                       'procedencia'=>'Lapida',
+              //                                       'destino'=>'Azul',
+              //                                       'dia'=>array(
+              //                                               'lunes'=>'1',
+              //                                               'martes'=>'0',                                                            'lunes'=>'si',
+              //                                               'miercoles'=>'1',                                                            'lunes'=>'si',
+              //                                               'jueves'=>'0',                                                            'lunes'=>'si',
+              //                                               'viernes'=>'0',                                                            'lunes'=>'si',
+              //                                               'sabado'=>'0',                                                            'lunes'=>'si',
+              //                                               'domingo'=>'0',                                                            'lunes'=>'si',
+              //                                               'feriado'=>'1',
+              //                                               )
+              //                                       ),'11:00*pp'=>array(
+              //                                       'hora'=>'14',
+              //                                       'empresa'=>'Rio Parana',
+              //                                       'procedencia'=>'Juarez',
+              //                                       'destino'=>'Azul',
+              //                                       'dia'=>array(
+              //                                               'lunes'=>'1',
+              //                                               'martes'=>'0',                                                            'lunes'=>'si',
+              //                                               'miercoles'=>'1',                                                            'lunes'=>'si',
+              //                                               'jueves'=>'0',                                                            'lunes'=>'si',
+              //                                               'viernes'=>'0',                                                            'lunes'=>'si',
+              //                                               'sabado'=>'0',                                                            'lunes'=>'si',
+              //                                               'domingo'=>'0',                                                            'lunes'=>'si',
+              //                                               'feriado'=>'1',
+              //                                               )
+              //                                       )
+              //                           );
+
+ $datos_viajes = file_get_contents("horarios.json");
+ $arrayViajes = json_decode($datos_viajes, true);
+
+               ?>
 <html>    
     <head> 
         <meta charset="utf-8">
-                <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin-ext' rel='stylesheet' type='text/css'>
-                <link href="https://fonts.googleapis.com/css?family=Passion+One|Viga|Satisfy" rel="stylesheet" type='text/css'>
-                <script type="text/javascript" src="bower_components/bootstrap/dist/bootstrap.min.js"></script>
-                <script type="text/javascript" src="bower_components/bootstrap/dist/bootstrap.js"></script>
-                
-                <script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyBbWhD4UD0AIkDFmxzkVFeSGNr3gSsPvvQ"></script>
-                <script src="bower_components/maplace-js/dist/maplace.min.js"></script>        
-                <script type="text/javascript" src="app/alas.maps.js"> </script>        
-                <script type="text/javascript" src="bower_components/timer.jquery/dist/timer.jquery.js"></script>
-                <link rel="stylesheet" type="text/css" href="app/css/main_terminal.css"/>
-            <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
-            <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="bower_components/bootstrap/dist/bootstrap.min.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap/dist/bootstrap.js"></script>
 
+        <link rel="stylesheet" type="text/css" href="app/css/main_terminal.css"/>
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
 
-                
-                <script src="app/js/jquery.mCustomScrollbar.min.js"></script>
-                <script src="app/js/ideaboxNews.js"></script>
-                <script src="app/js/ideaboxWeather.js"></script>
-                    <script src="app/js/mainComp.js"></script>
+        <script src="app/js/mainComp.js"></script>
     </head>
+
     <body class="admin">
-        <div class="container">
             
     <div class="container">
     <div class="row">
@@ -68,7 +63,7 @@
     
       </div>
 
-      <div class"row">
+     <div class="row">
         <div class="table-responsive col-lg-11">
           <table class="table col-lg-8">
             <thead class="thead-inverse">
@@ -95,37 +90,36 @@
                     <tr>
                         <td>
                             <?=  "<a href="."index.php?r=actualizar&id=".$t.">Actualizar</a><span></span>" ?> 
-                            <?=  "<a href="."index.php?r=eliminar&id=".$t.">Elimnar</a>" ?>    
+                            <?=  "<a href="."index.php?r=eliminar&id=".$t.">Eliminar</a>" ?>    
                         </td>                                     
                         <?php 
                         foreach($param as $p=>$v){
                             if(!is_array($v)){ ?>
-                                <td>
+                        <td><strong>
                                 <?=$v;?>
-                                </td>   
+                              </strong>  </td>   
                         <?php }else { 
-                                    foreach($v as $d=>$dv){ ?>
-                                            <td>
-                                            <?= $dv; ?>
-                                            </td>
+                         
+                                                foreach($v as $d=>$dv){ ?>
+                                                        <td>
+                                                        <?php if($dv==="1")echo "<strong>SI</strong>";
+                                                            else echo "<strong>NO</strong>";;
+                                                         ?>
+                                                        </td>
+                                            <?php } ?>
+                                        <?php } ?>
                                 <?php } ?>
+                                </tr>
                             <?php } ?>
-                    <?php } ?>
-                    </tr>
-                <?php } ?>
-            </tbody>
-      </table>
-</div>
-       </div>
-
+                        </tbody>
+                    </table>
+                </div>
+        </div>
     </div><!-- /.container -->
 
-
-        </div>
         <footer>
             <img src="images/logo-qwavee-blanco.png" width="200px" style="margin-top: 0.3em;"  />
         </footer>
     </body>
-    
 
 </html>
