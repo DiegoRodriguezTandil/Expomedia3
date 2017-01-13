@@ -1,5 +1,5 @@
 // Variables globales.
-var REFRESH_TIME = 5000;
+var REFRESH_TIME = 30000;
 var map;
 
 $(function() {

@@ -10,9 +10,9 @@
     }    
     
     function ordenar($a, $b){
-        $ha = explode('##', $a);
+        $ha = explode('____', $a);
         $ha = $ha[0];
-        $hb = explode('##', $b);
+        $hb = explode('____', $b);
         $hb = $hb[0];
 
         $dta = DateTime::createFromFormat("H:i", $ha);
@@ -29,9 +29,9 @@
     
     function loadToShow($horarios, $cant) {        
         uksort($horarios, function ($a, $b){
-            $ha = explode('##', $a);
+            $ha = explode('____', $a);
             $ha = $ha[0];
-            $hb = explode('##', $b);
+            $hb = explode('____', $b);
             $hb = $hb[0];
 
             $dta = DateTime::createFromFormat("H:i", $ha);

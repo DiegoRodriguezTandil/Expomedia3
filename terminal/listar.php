@@ -23,7 +23,7 @@
         if( ($id != 'NULL') && !array_key_exists($id, $arrayViajes)){
             // ERROR
         }else if($id == 'NULL'){
-            $id = $hora.'##'.str_replace(' ', '_',$empresa);
+            $id = $hora.'____'.str_replace(' ', '_',$empresa);
         }
         // ACTUALIZA
         $arrayViajes[$id] = [
