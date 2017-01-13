@@ -3,6 +3,7 @@
         <meta charset="utf-8">
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="app/js/viajes.js"></script>
+        <script src="app/js/mainComp.js"></script>
     </head>
     <body>
         <div class="container">
@@ -14,5 +15,9 @@
         </div>
         <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
         </div>
+        <script>
+            
+           
+        </script>
     </body>
 </html>

@@ -81,7 +81,7 @@
                 <th>Destino</th>
                 <th>Lun</th>
                 <th>Mar</th>
-                <th>Mie</th>
+                <th>Mié</th>
                 <th>Jue</th>
                 <th>Vie</th>
                 <th>Sab</th>
@@ -94,7 +94,7 @@
                 foreach($arrayViajes as $t=>$param){ ?>
                     <tr>
                         <td>
-                            <?=  "<a href="."index.php?r=actualizar&id=".$t.">Actualizar</a>" ?> 
+                            <?=  "<a href="."index.php?r=actualizar&id=".$t.">Actualizar</a><span></span>" ?> 
                             <?=  "<a href="."index.php?r=eliminar&id=".$t.">Elimnar</a>" ?>    
                         </td>                                     
                         <?php 
@@ -123,7 +123,7 @@
 
         </div>
         <footer>
-            <img src="images/logo_qwavee.png" width="200px" style="margin-top: 0.3em;"  />
+            <img src="images/logo-qwavee-blanco.png" width="200px" style="margin-top: 0.3em;"  />
         </footer>
     </body>
     

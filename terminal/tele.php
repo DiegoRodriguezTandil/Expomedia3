@@ -10,13 +10,14 @@
         <link rel="stylesheet" href="app/css/material.indigo-pink.min.css">
         <link rel="stylesheet" type="text/css" href="app/css/main_terminal.css"/>
         <script src="app/js/mainComp.js"></script>
+        <script type="text/javascript" src="app/js/viajes.js"></script>
     </head>
     <body>
         <div class="container">
             <top>
                 <img src="images/tandil_logo.png" style="margin-top: 0.3em;" />
                 <span>TERMINAL TANDIL - Movimiento diario
-                <div class="Timer">TERMINAL TANDIL - Movimiento diario</div></span>
+                <div class="Timer"></div></span>
             </top>
             
             <table class="table-striped table-mc-light-blue mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
@@ -28,7 +29,7 @@
                         <th class="mdl-data-table__cell--non-numeric">Destino</th>
                     </tr>
                 </thead>
-                <tbody>                    
+                <tbody id="viajes">                    
                     <tr>                        
                         <td class="mdl-data-table__cell--non-numeric importante">12:25</td>
                         <td class="mdl-data-table__cell--non-numeric importante">Empresa</td>

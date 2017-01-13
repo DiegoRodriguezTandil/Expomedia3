@@ -17,6 +17,13 @@ function ObtenerViajes() {
         },
         success: function(response) {
             console.log(response);
+            $.each(response.viajes,function(i,viaje){
+                content +='<tr><td class="mdl-data-table__cell--non-numeric importante">'+viaje[i].hora+'</td>'+
+                        '<td class="mdl-data-table__cell--non-numeric importante">'+viaje[i].empresa+'</td>'+
+                        '<td class="mdl-data-table__cell--non-numeric ">'+viaje[i].procedencia+'</td>'+
+                        '<td class="mdl-data-table__cell--non-numeric importante">'+viaje[i].destino+'</td></tr>';
+            });
+            $('#viajes').append(content);
         }
     });
     
