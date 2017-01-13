@@ -43,11 +43,8 @@
                 <script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyBbWhD4UD0AIkDFmxzkVFeSGNr3gSsPvvQ"></script>
                 <script src="bower_components/maplace-js/dist/maplace.min.js"></script>        
                 <script type="text/javascript" src="app/alas.maps.js"> </script>        
-                        <script type="text/javascript" src="bower_components/timer.jquery/dist/timer.jquery.js"></script>
-                <link rel="stylesheet" type="text/css" href="app/css/ideaboxWeather.css"/>
-                <link rel="stylesheet" type="text/css" href="app/css/ideaboxNews.css"/>
-                <link rel="stylesheet" type="text/css" href="app/css/jquery.mCustomScrollbar.min.css"/>      
-                <link rel="stylesheet" type="text/css" href="app/css/main.css"/>
+                <script type="text/javascript" src="bower_components/timer.jquery/dist/timer.jquery.js"></script>
+                <link rel="stylesheet" type="text/css" href="app/css/main_terminal.css"/>
             <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
             <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
 
@@ -58,14 +55,16 @@
                 <script src="app/js/ideaboxWeather.js"></script>
                     <script src="app/js/mainComp.js"></script>
     </head>
-    <body>
+    <body class="admin">
         <div class="container">
             
     <div class="container">
     <div class="row">
-         <div clas="col-md-6 col-md-offset-6">
-            <h1>viajes</h1>
-        </div>
+         <top class="admin">
+                <img src="images/tandil_logo.png" style="margin-top: 0.3em;" />
+                <span>TERMINAL TANDIL - Movimiento diario
+                <div class="Timer"></div></span>
+            </top>
     
       </div>
 
@@ -123,6 +122,9 @@
 
 
         </div>
+        <footer>
+            <img src="images/logo_qwavee.png" width="200px" style="margin-top: 0.3em;"  />
+        </footer>
     </body>
     
 
