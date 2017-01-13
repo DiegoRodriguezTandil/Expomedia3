@@ -15,20 +15,52 @@
             ))
     );
 
-    if ($action && ($action === 'guardar')) {
+    if ($action && ($action == 'guardar')) {
         // LEE DATOS GET
         $hora = filter_input(INPUT_GET, "hora");
-        $empresa = $_GET['empresa'];
-        $procedencia = $_GET['procedencia'];
-        $destino = $_GET['destino'];
-        $lunes = $_GET['lunes'];
-        $martes = $_GET['martes'];
-        $miercoles = $_GET['miercoles'];
-        $jueves = $_GET['jueves'];
-        $viernes = $_GET['viernes'];
-        $sabado = $_GET['sabado'];
-        $domingo = $_GET['domingo'];
-        $feriado = $_GET['feriado'];
+        $empresa = filter_input(INPUT_GET, "empresa");
+        $procedencia = filter_input(INPUT_GET, "procedencia");
+        $destino = filter_input(INPUT_GET, "destino");
+        $lunes = filter_input(INPUT_GET, "lunes", FILTER_SANITIZE_MAGIC_QUOTES, 
+            array("options" => array(
+                "default" => 0
+            ))
+        );
+        $martes  = filter_input(INPUT_GET, "martes", FILTER_SANITIZE_MAGIC_QUOTES, 
+            array("options" => array(
+                "default" => 0
+            ))
+        );
+        $miercoles  = filter_input(INPUT_GET, "miercoles", FILTER_SANITIZE_MAGIC_QUOTES, 
+            array("options" => array(
+                "default" => 0
+            ))
+        );
+        $jueves  = filter_input(INPUT_GET, "jueves", FILTER_SANITIZE_MAGIC_QUOTES, 
+            array("options" => array(
+                "default" => 0
+            ))
+        );
+        $viernes  = filter_input(INPUT_GET, "viernes", FILTER_SANITIZE_MAGIC_QUOTES, 
+            array("options" => array(
+                "default" => 0
+            ))
+        );
+        $sabado  = filter_input(INPUT_GET, "sabado", FILTER_SANITIZE_MAGIC_QUOTES, 
+            array("options" => array(
+                "default" => 0
+            ))
+        );
+        $domingo = filter_input(INPUT_GET, "domingo", FILTER_SANITIZE_MAGIC_QUOTES, 
+            array("options" => array(
+                "default" => 0
+            ))
+        );
+        $feriado = filter_input(INPUT_GET, "feriado", FILTER_SANITIZE_MAGIC_QUOTES, 
+            array("options" => array(
+                "default" => 0
+            ))
+        );
         // NUEVO O ACTUALIZA
         if( ($id != 'NULL') && !array_key_exists($id, $arrayViajes)){
             // ERROR
@@ -54,14 +86,15 @@
         ];
         saveToFile($arrayViajes);
     }
-    else if ($action && ($action === 'eliminar')) {
+    else if ($action && ($action == 'eliminar')) {
         if( ($id != 'NULL') && array_key_exists($id, $arrayViajes)){
             unset($arrayViajes[$id]);
             saveToFile($arrayViajes);
+        }else {
+            // ERROR
+            echo "Error,404 . ";
+            echo "<a href="."listar.php>  Volver a Listar</a><span></span>";
         }        
-        // ERROR
-        echo "Error,404 . ";
-        echo "<a href="."listar.php>  Volver a Listar</a><span></span>";
            
     }
     

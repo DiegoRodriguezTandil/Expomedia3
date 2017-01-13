@@ -30,7 +30,7 @@
         ]
     ];
     
-    if ($action && ($action = 'actualizar')) {
+    if ($action && ($action == 'actualizar')) {
         include_once 'funciones.php';
         $arrayViajes = loadFromFile();
         // var_dump($id);
@@ -66,23 +66,16 @@
 
         <h2>Crear / Actualizar movimiento </h2>
         <div class="row">
-            <?php
-            if (!isset($_GET['id'])) {
-                $id = $_GET['id'];
-                $action = "index.php?r=crear";
-            } else {
-                $action = 'index.php?r=actualizar&id=' . $id . "'";
-            }
-            ?>
             <form id="meetingForm" class="form-horizontal"
                   data-fv-framework="bootstrap"
                   data-fv-icon-valid="glyphicon glyphicon-ok"
                   data-fv-icon-invalid="glyphicon glyphicon-remove"
                   data-fv-icon-validating="glyphicon glyphicon-refresh" 
                   method="GET" 
-                  action=<?php echo "listar.php?r=guardar&id={$id}" ?> >
+                  action=<?php echo "listar.php" ?> >
                 <div clas="col-md-6 col-md-offset-6" style="margin-top:5%; margin-left:15%;">
-
+                    <input type="hidden" value="guardar" name="r">
+                    <input type="hidden" value="<?php echo $id ?>" name="id">
                     <div class="row">
 
                         <div class="col-lg-2">
@@ -115,35 +108,35 @@
                                 </style>
                                 <div class="col-lg-1">
                                     <label for="dia-lunes">Lunes</label>
-                                    <input type="checkbox" class="form-control" id="Dia-lunes" name="lunes" <?php echo $row['dia']['lunes']==1?'checked':''?> >
+                                    <input type="checkbox" class="form-control" id="Dia-lunes" name="lunes" <?php echo $row['dia']['lunes']==1?'checked':''?> value="1">
                                 </div> 
                                 <div class="col-lg-1 inputDias">
                                     <label for="dia-">Martes</label>
-                                    <input type="checkbox" class="form-control" id="dia-martes" name="martes" <?php echo $row['dia']['martes']==1?'checked':''?>>
+                                    <input type="checkbox" class="form-control" id="dia-martes" name="martes" <?php echo $row['dia']['martes']==1?'checked':''?> value="1">
                                 </div> 
                                 <div class="col-lg-1 inputDias">
                                     <label for="dia-">Miércoles</label>
-                                    <input type="checkbox" class="form-control" id="dia-miercoles" name="miercoles" <?php echo $row['dia']['miercoles']==1?'checked':''?>>
+                                    <input type="checkbox" class="form-control" id="dia-miercoles" name="miercoles" <?php echo $row['dia']['miercoles']==1?'checked':''?> value="1">
                                 </div> 
                                 <div class="col-lg-1 inputDias">
                                     <label for="dia-">Jueves</label>
-                                    <input type="checkbox" class="form-control" id="dia-jueves" name="jueves" <?php  echo $row['dia']['jueves']==1?'checked':''?>>
+                                    <input type="checkbox" class="form-control" id="dia-jueves" name="jueves" <?php  echo $row['dia']['jueves']==1?'checked':''?> value="1">
                                 </div> 
                                 <div class="col-lg-1 inputDias">
                                     <label for="dia-">Viernes</label>
-                                    <input type="checkbox" class="form-control" id="dia-viernes" name="viernes" <?php  echo $row['dia']['viernes']==1?'checked':''?>>
+                                    <input type="checkbox" class="form-control" id="dia-viernes" name="viernes" <?php  echo $row['dia']['viernes']==1?'checked':''?> value="1">
                                 </div> 
                                 <div class="col-lg-1 inputDias">
                                     <label for="dia-">Sabado</label>
-                                    <input type="checkbox" class="form-control" id="dia-sabado" name="sabado" <?php  echo $row['dia']['sabado']==1?'checked':''?>>
+                                    <input type="checkbox" class="form-control" id="dia-sabado" name="sabado" <?php  echo $row['dia']['sabado']==1?'checked':''?> value="1">
                                 </div> 
                                 <div class="col-lg-1 inputDias">
                                     <label for="dia-">Domingo</label>
-                                    <input type="checkbox" class="form-control" id="dia-domingo" name="domingo" <?php  echo $row['dia']['domingo']==1?'checked':''?>>
+                                    <input type="checkbox" class="form-control" id="dia-domingo" name="domingo" <?php  echo $row['dia']['domingo']==1?'checked':''?> value="1">
                                 </div> 
                                 <div class="col-lg-1 inputDias">
                                     <label for="dia-">Feriado</label>
-                                    <input type="checkbox" class="form-control" id="dia-feriado" name="feriado" <?php  echo $row['dia']['feriado']==1?'checked':''?>>
+                                    <input type="checkbox" class="form-control" id="dia-feriado" name="feriado" <?php  echo $row['dia']['feriado']==1?'checked':''?> value="1">
                                 </div>                                                                                                                                             
 
                           </div>  
