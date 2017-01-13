@@ -1,11 +1,8 @@
 // Variables globales.
-var REFRESH_TIME = 10000;
+var REFRESH_TIME = 60000;
 
 $(function() {    
-    setTimeout(
-        ObtenerViajes,
-        REFRESH_TIME
-    );
+    ObtenerViajes();
 });
 
 function ObtenerViajes() {
