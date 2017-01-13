@@ -1,37 +1,43 @@
 <html>
     <head> 
-              <?php $arrayViajes= array('10:00*pp'=>array(
-                                                    'hora'=>'22',
-                                                    'empresa'=>'el rapido',
-                                                    'procedencia'=>'Lapida',
-                                                    'destino'=>'Azul',
-                                                    'dia'=>array(
-                                                            'lunes'=>'1',
-                                                            'martes'=>'0',                                                            'lunes'=>'si',
-                                                            'miercoles'=>'1',                                                            'lunes'=>'si',
-                                                            'jueves'=>'0',                                                            'lunes'=>'si',
-                                                            'viernes'=>'0',                                                            'lunes'=>'si',
-                                                            'sabado'=>'0',                                                            'lunes'=>'si',
-                                                            'domingo'=>'0',                                                            'lunes'=>'si',
-                                                            'feriado'=>'1',
-                                                            )
-                                                    ),'11:00*pp'=>array(
-                                                    'hora'=>'14',
-                                                    'empresa'=>'Rio Parana',
-                                                    'procedencia'=>'Juarez',
-                                                    'destino'=>'Azul',
-                                                    'dia'=>array(
-                                                            'lunes'=>'1',
-                                                            'martes'=>'0',                                                            'lunes'=>'si',
-                                                            'miercoles'=>'1',                                                            'lunes'=>'si',
-                                                            'jueves'=>'0',                                                            'lunes'=>'si',
-                                                            'viernes'=>'0',                                                            'lunes'=>'si',
-                                                            'sabado'=>'0',                                                            'lunes'=>'si',
-                                                            'domingo'=>'0',                                                            'lunes'=>'si',
-                                                            'feriado'=>'1',
-                                                            )
-                                                    )
-                                        );?>
+               <?php 
+            // $arrayViajes= array('10:00*pp'=>array(
+              //                                       'hora'=>'22',
+              //                                       'empresa'=>'el rapido',
+              //                                       'procedencia'=>'Lapida',
+              //                                       'destino'=>'Azul',
+              //                                       'dia'=>array(
+              //                                               'lunes'=>'1',
+              //                                               'martes'=>'0',                                                            'lunes'=>'si',
+              //                                               'miercoles'=>'1',                                                            'lunes'=>'si',
+              //                                               'jueves'=>'0',                                                            'lunes'=>'si',
+              //                                               'viernes'=>'0',                                                            'lunes'=>'si',
+              //                                               'sabado'=>'0',                                                            'lunes'=>'si',
+              //                                               'domingo'=>'0',                                                            'lunes'=>'si',
+              //                                               'feriado'=>'1',
+              //                                               )
+              //                                       ),'11:00*pp'=>array(
+              //                                       'hora'=>'14',
+              //                                       'empresa'=>'Rio Parana',
+              //                                       'procedencia'=>'Juarez',
+              //                                       'destino'=>'Azul',
+              //                                       'dia'=>array(
+              //                                               'lunes'=>'1',
+              //                                               'martes'=>'0',                                                            'lunes'=>'si',
+              //                                               'miercoles'=>'1',                                                            'lunes'=>'si',
+              //                                               'jueves'=>'0',                                                            'lunes'=>'si',
+              //                                               'viernes'=>'0',                                                            'lunes'=>'si',
+              //                                               'sabado'=>'0',                                                            'lunes'=>'si',
+              //                                               'domingo'=>'0',                                                            'lunes'=>'si',
+              //                                               'feriado'=>'1',
+              //                                               )
+              //                                       )
+              //                           );
+
+// $datos_viajes = file_get_contents("horarios.json");
+// $arrayViajes = json_decode($datos_viajes, true);
+
+               ?>
 <html>    
     <head> 
         <meta charset="utf-8">
@@ -59,71 +65,70 @@
                     <script src="app/js/mainComp.js"></script>
     </head>
     <body>
-        <div class="container">
-            
     <div class="container">
-    <div class="row">
-         <div clas="col-md-6 col-md-offset-6">
-            <h1>viajes</h1>
-        </div>
-    
-      </div>
+            
+                <div class="container">
+                <div class="row">
+                 <div class="col-md-6 col-md-offset-6">
+                    <h1>viajes</h1>
+                </div>
 
-      <div class"row">
-        <div class="table-responsive col-lg-11">
-          <table class="table col-lg-8">
-            <thead class="thead-inverse">
-              <tr>
-              <!--<span class=" .fa-pencil-square-o"></span><span class="fa fa-pencil"></span>-->
-                <th>Acciones </th>
-                <th>Hora</th>
-                <th>Empresa</th>
-                <th>Procedencia</th>
-                <th>Destino</th>
-                <th>Lun</th>
-                <th>Mar</th>
-                <th>Mie</th>
-                <th>Jue</th>
-                <th>Vie</th>
-                <th>Sab</th>
-                <th>Dom</th>
-                <th>Feriado</th>
-              </tr>
-            </thead>
-            <tbody>
-                <?php  
-                foreach($arrayViajes as $t=>$param){ ?>
-                    <tr>
-                        <td>
-                            <?=  "<a href="."index.php?r=actualizar&id=".$t.">Actualizar</a>" ?> 
-                            <?=  "<a href="."index.php?r=eliminar&id=".$t.">Elimnar</a>" ?>    
-                        </td>                                     
-                        <?php 
-                        foreach($param as $p=>$v){
-                            if(!is_array($v)){ ?>
-                                <td>
-                                <?=$v;?>
-                                </td>   
-                        <?php }else { 
-                                    foreach($v as $d=>$dv){ ?>
+                </div>
+
+                <div class"row">
+                <div class="table-responsive col-lg-11">
+                  <table class="table col-lg-8">
+                    <thead class="thead-inverse">
+                      <tr>
+                      <!--<span class=" .fa-pencil-square-o"></span><span class="fa fa-pencil"></span>-->
+                        <th>Acciones </th>
+                        <th>Hora</th>
+                        <th>Empresa</th>
+                        <th>Procedencia</th>
+                        <th>Destino</th>
+                        <th>Lun</th>
+                        <th>Mar</th>
+                        <th>Mie</th>
+                        <th>Jue</th>
+                        <th>Vie</th>
+                        <th>Sab</th>
+                        <th>Dom</th>
+                        <th>Feriado</th>
+                      </tr>
+                    </thead>
+                        <tbody>
+                            <?php  
+                            foreach($arrayViajes as $t=>$param){ ?>
+                                <tr>
+                                    <td>
+                                        <?=  "<a href="."index.php?r=actualizar&id=".$t.">Actualizar</a>" ?> 
+                                        <?=  "<a href="."index.php?r=eliminar&id=".$t.">Elimnar</a>" ?>    
+                                    </td>                                     
+                                    <?php 
+                                    foreach($param as $p=>$v){
+                                        if(!is_array($v)){ ?>
                                             <td>
-                                            <?= $dv; ?>
-                                            </td>
+                                            <?=$v;?>
+                                            </td>   
+                                    <?php }else { 
+                                                foreach($v as $d=>$dv){ ?>
+                                                        <td>
+                                                        <?php if($dv==="1")echo "si";
+                                                            else echo "no";
+                                                         ?>
+                                                        </td>
+                                            <?php } ?>
+                                        <?php } ?>
                                 <?php } ?>
+                                </tr>
                             <?php } ?>
-                    <?php } ?>
-                    </tr>
-                <?php } ?>
-            </tbody>
-      </table>
-</div>
-       </div>
-
+                        </tbody>
+                    </table>
+                </div>
+        </div>
     </div><!-- /.container -->
 
 
-        </div>
-    </body>
-    
-
+   </div>
+ </body>
 </html>
