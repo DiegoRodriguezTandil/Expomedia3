@@ -11,7 +11,7 @@
                 "default" => 'NULL'
             ))
     );
-    
+   
     
     $row = [
         'hora'=>'',
@@ -33,10 +33,13 @@
     if ($action && ($action = 'actualizar')) {
         include_once 'funciones.php';
         $arrayViajes = loadFromFile();
+        // var_dump($id);
+        // // var_dump($arrayViajes);die();
         if(array_key_exists($id, $arrayViajes)){
             $row = $arrayViajes[$id];
-        }
-        die('CLAVE NO EXISTE. NO ES POSIBLE MODIFICAR');
+        }else{
+             die('CLAVE NO EXISTE. NO ES POSIBLE MODIFICAR');
+             }
     }
 
 
@@ -68,19 +71,19 @@
                  <div class="row">
                         <div class="col-lg-2">
                             <label for="Hora">Hora</label>
-                            <input type="text" class="form-control" id="Hora" placeholder="Ingrese un Horario" value="<?php=$row['hora']?>" >
+                            <input type="text" class="form-control" id="Hora"  placeholder="Ingrese un Horario" name="hora" value="<?php $row['hora']?>" >
                          </div>
                         <div class="col-lg-3">
                             <label for="empresa">Empresa</label>
-                            <input type="text" class="form-control" id="Empresa" placeholder="Ingrese Nombre de la Empresa" value="<?php=$row['empresa']?>">
+                            <input type="text" class="form-control" id="Empresa" placeholder="Ingrese Nombre de la Empresa" name="empresa" value="<?php $row['empresa']?>">
                          </div>
                         <div class="col-lg-3">
                             <label for="empresa">Procedencia</label>
-                            <input type="text" class="form-control" id="Procedencia" placeholder="Ingrese Procedencia" value="<?php=$row['procedencia']?>">
+                            <input type="text" class="form-control" id="Procedencia" placeholder="Ingrese Procedencia" name="procedencia" value="<?php $row['procedencia']?>">
                         </div>
                         <div class="col-lg-3">
                             <label for="empresa">Destino</label>
-                            <input type="text" class="form-control" id="Destino" placeholder="Ingrese Destino" value="<?php=$row['destino']?>">
+                            <input type="text" class="form-control" id="Destino" placeholder="Ingrese Destino" name="destino" value="<?php $row['destino']?>">
                         </div>
                     </div>  
                     <div class="row">                            
@@ -92,35 +95,35 @@
                             </style>
                             <div class="col-lg-1">
                                 <label for="dia-lunes">Lunes</label>
-                                <input type="checkbox" class="form-control" id="Dia-lunes" <?php=$row['dia']['lunes']==1?'checked':''?> >
+                                <input type="checkbox" class="form-control" id="Dia-lunes" name="lunes" <?php $row['dia']['lunes']==1?'checked':''?> >
                             </div> 
                             <div class="col-lg-1 inputDias">
                                 <label for="dia-">Martes</label>
-                                <input type="checkbox" class="form-control" id="dia-martes" <?php=$row['dia']['martes']==1?'checked':''?>>
+                                <input type="checkbox" class="form-control" id="dia-martes" name="martes" <?php $row['dia']['martes']==1?'checked':''?>>
                             </div> 
                             <div class="col-lg-1 inputDias">
                                 <label for="dia-">Miércoles</label>
-                                <input type="checkbox" class="form-control" id="dia-miercoles" <?php=$row['dia']['miercoles']==1?'checked':''?>>
+                                <input type="checkbox" class="form-control" id="dia-miercoles" name="miercoles" <?php $row['dia']['miercoles']==1?'checked':''?>>
                             </div> 
                             <div class="col-lg-1 inputDias">
                                 <label for="dia-">Jueves</label>
-                                <input type="checkbox" class="form-control" id="dia-jueves" <?php=$row['dia']['jueves']==1?'checked':''?>>
+                                <input type="checkbox" class="form-control" id="dia-jueves" name="jueves" <?php $row['dia']['jueves']==1?'checked':''?>>
                             </div> 
                             <div class="col-lg-1 inputDias">
                                 <label for="dia-">Viernes</label>
-                                <input type="checkbox" class="form-control" id="dia-viernes" <?php=$row['dia']['viernes']==1?'checked':''?>>
+                                <input type="checkbox" class="form-control" id="dia-viernes" name="viernes" <?php $row['dia']['viernes']==1?'checked':''?>>
                             </div> 
                             <div class="col-lg-1 inputDias">
                                 <label for="dia-">Sabado</label>
-                                <input type="checkbox" class="form-control" id="dia-sabado" <?php=$row['dia']['sabado']==1?'checked':''?>>
+                                <input type="checkbox" class="form-control" id="dia-sabado" name="sabado" <?php $row['dia']['sabado']==1?'checked':''?>>
                             </div> 
                             <div class="col-lg-1 inputDias">
                                 <label for="dia-">Domingo</label>
-                                <input type="checkbox" class="form-control" id="dia-domingo" <?php=$row['dia']['domingo']==1?'checked':''?>>
+                                <input type="checkbox" class="form-control" id="dia-domingo" name="domingo" <?php $row['dia']['domingo']==1?'checked':''?>>
                             </div> 
                             <div class="col-lg-1 inputDias">
                                 <label for="dia-">Feriado</label>
-                                <input type="checkbox" class="form-control" id="dia-feriado" <?php=$row['dia']['feriado']==1?'checked':''?>>
+                                <input type="checkbox" class="form-control" id="dia-feriado" name="feriado" <?php $row['dia']['feriado']==1?'checked':''?>>
                             </div>                                                                                                                                             
 
                       </div>  

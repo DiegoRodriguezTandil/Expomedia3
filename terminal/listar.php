@@ -19,6 +19,16 @@
         // LEE DATOS GET
         $hora = filter_input(INPUT_GET, "hora");
         $empresa = $_GET['empresa'];
+        $procedencia = $_GET['procedencia'];
+        $destino = $_GET['destino'];
+        $lunes = $_GET['lunes'];
+        $martes = $_GET['martes'];
+        $miercoles = $_GET['miercoles'];
+        $jueves = $_GET['jueves'];
+        $viernes = $_GET['viernes'];
+        $sabado = $_GET['sabado'];
+        $domingo = $_GET['domingo'];
+        $feriado = $_GET['feriado'];
         // NUEVO O ACTUALIZA
         if( ($id != 'NULL') && !array_key_exists($id, $arrayViajes)){
             // ERROR
@@ -29,17 +39,17 @@
         $arrayViajes[$id] = [
             'hora'=>$hora,
             'empresa'=>$empresa,
-            'procedencia'=>'',
-            'destino'=>'',
+            'procedencia'=>$procedencia,
+            'destino'=>$destino,
             'dia'=> [
-                    'lunes'=>'1',
-                    'martes'=>'1',
-                    'miercoles'=>'1',
-                    'jueves'=>'1',
-                    'viernes'=>'1',
-                    'sabado'=>'1',
-                    'domingo'=>'1',
-                    'feriado'=>'1',
+                    'lunes'=>$lunes,
+                    'martes'=>$martes,
+                    'miercoles'=>$miercoles,
+                    'jueves'=>$jueves,
+                    'viernes'=>$viernes,
+                    'sabado'=>$sabado,
+                    'domingo'=>$domingo,
+                    'feriado'=>$feriado,
             ]
         ];
         saveToFile($arrayViajes);
@@ -98,36 +108,37 @@
               </tr>
             </thead>
             <tbody>
-                <?php  
-                foreach($arrayViajes as $t=>$param){ ?>
-                    <tr>
-                        <td>
-                            <?=  "<a href="."form.php?r=actualizar&id=".$t.">Actualizar</a><span></span>" ?> 
-                            <?=  "<a href="."listar.php?r=eliminar&id=".$t.">Eliminar</a>" ?>    
-                        </td>                                     
-                        <?php 
-                        foreach($param as $p=>$v){
-                            if(!is_array($v)){ ?>
-                        <td><strong>
-                                <?=$v;?>
-                              </strong>  </td>   
-                        <?php }else { 
-                         
-                                                foreach($v as $d=>$dv){ ?>
-                                                        <td>
-                                                        <?php if($dv==="1")echo "<strong>SI</strong>";
-                                                            else echo "<strong>NO</strong>";;
-                                                         ?>
-                                                        </td>
-                                            <?php } ?>
-                                        <?php } ?>
-                                <?php } ?>
-                                </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-        </div>
+                      <?php  
+                      foreach($arrayViajes as $t=>$param){ ?>
+                          <tr>
+                              <td>
+                                  <?=  "<a href="."form.php?r=actualizar&id=".$t.">Actualizar</a><span></span>" ?> 
+                                  <?=  "<a href="."listar.php?r=eliminar&id=".$t.">Eliminar</a>" ?>    
+                              </td>                                     
+                              <?php 
+                              foreach($param as $p=>$v){
+                                  if(!is_array($v)){ ?>
+                                    <td>
+                                      <strong>
+                                        <?=$v;?>
+                                      </strong>  
+                                    </td>   
+                              <?php }else{ 
+                                          foreach($v as $d=>$dv){ ?>
+                                                  <td>
+                                                  <?php if($dv==="1")echo "<strong>SI</strong>";
+                                                        else echo "<strong>NO</strong>";;
+                                                   ?>
+                                                  </td>
+                                      <?php } ?>
+                                   <?php } ?>
+                              <?php } ?>
+                          </tr>
+                   <?php } ?>
+            </tbody>
+          </table>
+         </div>
+      </div>
     </div><!-- /.container -->
 
         <footer>
