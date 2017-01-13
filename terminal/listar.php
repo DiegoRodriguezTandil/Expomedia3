@@ -1,43 +1,58 @@
-<html>
-    <head> 
-               <?php 
-            // $arrayViajes= array('10:00*pp'=>array(
-              //                                       'hora'=>'22',
-              //                                       'empresa'=>'el rapido',
-              //                                       'procedencia'=>'Lapida',
-              //                                       'destino'=>'Azul',
-              //                                       'dia'=>array(
-              //                                               'lunes'=>'1',
-              //                                               'martes'=>'0',                                                            'lunes'=>'si',
-              //                                               'miercoles'=>'1',                                                            'lunes'=>'si',
-              //                                               'jueves'=>'0',                                                            'lunes'=>'si',
-              //                                               'viernes'=>'0',                                                            'lunes'=>'si',
-              //                                               'sabado'=>'0',                                                            'lunes'=>'si',
-              //                                               'domingo'=>'0',                                                            'lunes'=>'si',
-              //                                               'feriado'=>'1',
-              //                                               )
-              //                                       ),'11:00*pp'=>array(
-              //                                       'hora'=>'14',
-              //                                       'empresa'=>'Rio Parana',
-              //                                       'procedencia'=>'Juarez',
-              //                                       'destino'=>'Azul',
-              //                                       'dia'=>array(
-              //                                               'lunes'=>'1',
-              //                                               'martes'=>'0',                                                            'lunes'=>'si',
-              //                                               'miercoles'=>'1',                                                            'lunes'=>'si',
-              //                                               'jueves'=>'0',                                                            'lunes'=>'si',
-              //                                               'viernes'=>'0',                                                            'lunes'=>'si',
-              //                                               'sabado'=>'0',                                                            'lunes'=>'si',
-              //                                               'domingo'=>'0',                                                            'lunes'=>'si',
-              //                                               'feriado'=>'1',
-              //                                               )
-              //                                       )
-              //                           );
+<?php
 
- $datos_viajes = file_get_contents("horarios.json");
- $arrayViajes = json_decode($datos_viajes, true);
+    include_once 'funciones.php';
+    $arrayViajes = loadFromFile();
+    
+    $action = filter_input(INPUT_GET, "r", FILTER_SANITIZE_MAGIC_QUOTES, 
+            array("options" => array(
+                "default" => FALSE
+            ))
+    );
+    
+    $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_MAGIC_QUOTES, 
+            array("options" => array(
+                "default" => 'NULL'
+            ))
+    );
 
-               ?>
+    if ($action && ($action = 'guardar')) {
+        // LEE DATOS GET
+        $hora = filter_input(INPUT_GET, "hora");
+        $empresa = $_GET['empresa'];
+        // NUEVO O ACTUALIZA
+        if( ($id != 'NULL') && !array_key_exists($id, $arrayViajes)){
+            // ERROR
+        }else if($id == 'NULL'){
+            $id = $hora.'##'.str_replace(' ', '_',$empresa);
+        }
+        // ACTUALIZA
+        $arrayViajes[$id] = [
+            'hora'=>$hora,
+            'empresa'=>$empresa,
+            'procedencia'=>'',
+            'destino'=>'',
+            'dia'=> [
+                    'lunes'=>'1',
+                    'martes'=>'1',
+                    'miercoles'=>'1',
+                    'jueves'=>'1',
+                    'viernes'=>'1',
+                    'sabado'=>'1',
+                    'domingo'=>'1',
+                    'feriado'=>'1',
+            ]
+        ];
+        saveToFile($arrayViajes);
+    }
+    else if ($action && ($action = 'eliminar')) {
+        if( ($id != 'NULL') && array_key_exists($id, $arrayViajes)){
+            unset($arrayViajes[$id]);
+            saveToFile($arrayViajes);
+        }        
+        // ERROR
+    }
+    
+?>    
 <html>    
     <head> 
         <meta charset="utf-8">
@@ -55,14 +70,12 @@
             
     <div class="container">
     <div class="row">
-         <top class="admin">
-                <img src="images/tandil_logo.png" style="margin-top: 0.3em;" />
-                <span>TERMINAL TANDIL - Movimiento diario
-                <div class="Timer"></div></span>
-            </top>
-    
-      </div>
-
+        <top class="admin">
+            <img src="images/tandil_logo.png" style="margin-top: 0.3em;" />
+            <span>TERMINAL TANDIL - Movimiento diario
+            <div class="Timer"></div></span>
+        </top>    
+    </div>
      <div class="row">
         <div class="table-responsive col-lg-11">
           <table class="table col-lg-8">
@@ -89,8 +102,8 @@
                 foreach($arrayViajes as $t=>$param){ ?>
                     <tr>
                         <td>
-                            <?=  "<a href="."index.php?r=actualizar&id=".$t.">Actualizar</a><span></span>" ?> 
-                            <?=  "<a href="."index.php?r=eliminar&id=".$t.">Eliminar</a>" ?>    
+                            <?=  "<a href="."form.php?r=actualizar&id=".$t.">Actualizar</a><span></span>" ?> 
+                            <?=  "<a href="."listar.php?r=eliminar&id=".$t.">Eliminar</a>" ?>    
                         </td>                                     
                         <?php 
                         foreach($param as $p=>$v){
