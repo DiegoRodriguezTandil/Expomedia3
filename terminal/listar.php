@@ -177,9 +177,6 @@
         </div>
       </div><!-- /.container -->
 
-      <footer>
-          <img src="images/logo-qwavee-blanco.png" width="200px" style="margin-top: 0.3em;"  />
-      </footer>
   </body>
 
 </html>
