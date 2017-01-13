@@ -98,6 +98,7 @@
                     </thead>
                         <tbody>
                             <?php  
+                            $arrayViajes=array();
                             foreach($arrayViajes as $t=>$param){ ?>
                                 <tr>
                                     <td>
