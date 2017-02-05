@@ -17,7 +17,7 @@
         <script src="app/js/jquery.mCustomScrollbar.min.js"></script>
         <script src="app/js/ideaboxNews.js"></script>
         <script src="app/js/ideaboxWeather.js"></script>
-            <script src="app/js/mainComp.js"></script>
+        <script src="app/js/mainComp.js"></script>
     </head>
     <body>
         <div class="container">

@@ -122,7 +122,12 @@
               <div class="Timer"></div></span>
           </top>    
       </div>
-       <div class="row">
+          <div class="row">
+              <div class="table-responsive col-lg-11" style="margin-bottom: 0.3em;margin-top: 0.3em;">
+                  <a class="btn btn-primary" href="form.php" role="button">Nuevo</a>                  
+              </div>
+          </div>
+        <div class="row">
           <div class="table-responsive col-lg-11">
             <table class="table col-lg-8">
               <thead class="thead-inverse">
@@ -163,7 +168,7 @@
                                   foreach($v as $d=>$dv){ ?>
                                           <td>
                                           <?php if($dv==="1")echo "<strong>SI</strong>";
-                                                else echo "<strong>NO</strong>";;
+                                                else echo "NO";
                                            ?>
                                           </td>
                               <?php } ?>
@@ -177,9 +182,9 @@
         </div>
       </div><!-- /.container -->
 
-      <footer>
+      <!-- footer>
           <img src="images/logo-qwavee-blanco.png" width="200px" style="margin-top: 0.3em;"  />
-      </footer>
+      </footer -->
   </body>
 
 </html>

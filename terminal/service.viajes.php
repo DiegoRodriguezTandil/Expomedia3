@@ -1,8 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-
     /**
      * Cantidad de Viajes
      */
@@ -35,8 +32,6 @@ ini_set("display_errors", 1);
  *  ]
  * ]
  */    
-error_reporting(E_ALL);
-ini_set("display_errors", 1);    
 
     include_once 'funciones.php';
     /**

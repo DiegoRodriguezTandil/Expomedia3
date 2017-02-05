@@ -1,5 +1,7 @@
 <?php
 
+    date_default_timezone_set('America/Argentina/Buenos_Aires');        
+
     function loadFromFile() {
         $file = file_get_contents('horarios.json');
         return json_decode($file,TRUE);
@@ -46,7 +48,6 @@
             return 1;
         });  
 
-        date_default_timezone_set('America/Argentina/Buenos_Aires');        
         $now = time();        
         $r = array();
         $manana = array();
