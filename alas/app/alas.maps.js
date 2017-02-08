@@ -5,15 +5,6 @@ var markers = new Array();
 
 $(function() {
 
-//    map = new Maplace({
-//        map_options: {
-//            set_center: [-37.328241, -59.135563],
-//            zoom: 14,
-//            controls_on_map: false,
-//            show_markers: true,
-//        }
-//    }).Load();
-//    
     map = new google.maps.Map(document.getElementById('gmap'), {
         center: {lat: -37.328241, lng: -59.135563},
         zoom: 14
@@ -35,8 +26,12 @@ function GoogleMapUpdate() {
         dataType: "json",
         async: false,
         success: function(response) {
-           // debugger;
+
             $('#gmap').data('rqid',response.rq_id);
+            
+            map.setCenter(new google.maps.LatLng(response.zone.center[0],response.zone.center[1]));
+            map.setZoom(response.zone.zoom);
+            
             var positions = $.makeArray( response.positions );
             
             // Add new markers from server response            
@@ -74,7 +69,6 @@ function GoogleMapUpdate() {
                 
                 remove = null;
             }
-            
             
         }
     });    
