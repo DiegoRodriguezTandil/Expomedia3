@@ -11,9 +11,9 @@ class Viajes {
     
     public function loadToShow($cant) {
         $horarios_ordenados = uksort($this->horarios, function($a, $b){
-            $ha = explode('##', $a);
+            $ha = explode('____', $a);
             $ha = $ha[0];
-            $hb = explode('##', $b);
+            $hb = explode('____', $b);
             $hb = $hb[0];
             
             $t = date("H:i",$ha);
