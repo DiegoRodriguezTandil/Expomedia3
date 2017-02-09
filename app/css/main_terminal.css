@@ -28,7 +28,8 @@ body {
     background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #337ab7),
         color-stop(0.5, #63d3e9), color-stop(1, #006db5));
     padding:0; 
-    margin:0; 
+    margin:10%; 
+   
 }
 
 

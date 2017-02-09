@@ -1,10 +1,7 @@
 <html>
     <head> 
         <meta charset="utf-8">
-        <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin-ext' rel='stylesheet' type='text/css'>-->
-        <!--<link href="https://fonts.googleapis.com/css?family=Passion+One|Viga|Satisfy" rel="stylesheet" type='text/css'>-->
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-
         <script type="text/javascript" src="bower_components/timer.jquery/dist/timer.jquery.js"></script>
    
         <link rel="stylesheet" href="app/css/material.indigo-pink.min.css">
@@ -17,9 +14,10 @@
             <top>
                 <img src="images/tandil_logo.png" style="margin-top: 0.3em;" />
                 <span>TERMINAL TANDIL - Movimiento diario
-                <div class="Timer"></div></span>
+                <!--<div class="Timer"></div>-->
+                </span>   
             </top>
-            
+            <br>
             <table class="table-striped table-mc-light-blue mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
                 <thead class="thead-inverse">
                     <tr>
@@ -34,7 +32,8 @@
                 </tbody>
             </table>     
             <footer>
-                <img src="images/logo-qwavee-blanco.png" width="200px" style="margin-top: 0.3em;"  />
+                <div class="Timer"></div>
+                <img src="images/logo-qwavee-blanco.png" width="200px" style="margin-bottom: 3em; margin-right: 4em"  />
             </footer>
         </div>   
     </body>
