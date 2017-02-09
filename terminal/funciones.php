@@ -30,20 +30,30 @@
     function saveToFile($horarios) {
         file_put_contents('horarios.json', json_encode($horarios));
     }    
+    $semana = [
+        0 => 'domingo',
+        1 => 'lunes',
+        2 => 'martes',
+        3 => 'miercoles',
+        4 => 'jueves',
+        5 => 'viernes',
+        6 => 'sabado'
+    ];
     
-    function filtroDia($dias) {
+    function filtroDiaHoy($dias) {
+        global $semana;
         $today_time = new DateTime();
         $today = $today_time->format('w');// 0 Domingo
-        $tomorrow = ($today + 1) % 7;
+        return ($dias[$semana[$today]]==1);
+    }
+    
+    function filtroDiaManana($dias) {
+        global $semana;
+        $today_time = new DateTime();
+        $today = $today_time->format('w');// 0 Domingo
+        $tomorrow = ($today + 1) % count($semana);
         
-        return 
-            ($today == 0 || $tomorrow == 0) && ($dias['domingo']==1)
-         || ($today == 1 || $tomorrow == 1) && ($dias['lunes']==1)
-         || ($today == 2 || $tomorrow == 2) && ($dias['martes']==1)
-         || ($today == 3 || $tomorrow == 3) && ($dias['miercoles']==1)
-         || ($today == 4 || $tomorrow == 4) && ($dias['jueves']==1)
-         || ($today == 5 || $tomorrow == 5) && ($dias['viernes']==1)
-         || ($today == 6 || $tomorrow == 6) && ($dias['sabado']==1);
+        return ($dias[$semana[$tomorrow]]==1);
     }
     
     function loadToShow($horarios, $cant) {        
@@ -62,7 +72,7 @@
             $dta = DateTime::createFromFormat("H:i", $h['hora']);
             $t = $dta->getTimestamp();
             
-            if(( $now <= $t ) && filtroDia($h['dia']))
+            if(( $now <= $t ) && filtroDiaHoy($h['dia']))
             {
                 array_push($r,$h);
                 $i++;
@@ -78,8 +88,10 @@
             while(($i<$cant)&&(count($manana)>0))
             {
                 $h = array_shift($manana);
-                array_push($r,$h);
-                $i++;
+                if(filtroDiaManana($h['dia'])){
+                    array_push($r,$h);
+                    $i++;                    
+                }
             }            
         }
         
