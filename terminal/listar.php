@@ -18,73 +18,76 @@
     if ($action && ($action == 'guardar')) {
         // LEE DATOS GET
         $hora = filter_input(INPUT_GET, "hora");
-        $empresa = filter_input(INPUT_GET, "empresa");
-        $procedencia = filter_input(INPUT_GET, "procedencia");
-        $destino = filter_input(INPUT_GET, "destino");
-        $lunes = filter_input(INPUT_GET, "lunes", FILTER_SANITIZE_MAGIC_QUOTES, 
-            array("options" => array(
-                "default" => 0
-            ))
-        );
-        $martes  = filter_input(INPUT_GET, "martes", FILTER_SANITIZE_MAGIC_QUOTES, 
-            array("options" => array(
-                "default" => 0
-            ))
-        );
-        $miercoles  = filter_input(INPUT_GET, "miercoles", FILTER_SANITIZE_MAGIC_QUOTES, 
-            array("options" => array(
-                "default" => 0
-            ))
-        );
-        $jueves  = filter_input(INPUT_GET, "jueves", FILTER_SANITIZE_MAGIC_QUOTES, 
-            array("options" => array(
-                "default" => 0
-            ))
-        );
-        $viernes  = filter_input(INPUT_GET, "viernes", FILTER_SANITIZE_MAGIC_QUOTES, 
-            array("options" => array(
-                "default" => 0
-            ))
-        );
-        $sabado  = filter_input(INPUT_GET, "sabado", FILTER_SANITIZE_MAGIC_QUOTES, 
-            array("options" => array(
-                "default" => 0
-            ))
-        );
-        $domingo = filter_input(INPUT_GET, "domingo", FILTER_SANITIZE_MAGIC_QUOTES, 
-            array("options" => array(
-                "default" => 0
-            ))
-        );
-        $feriado = filter_input(INPUT_GET, "feriado", FILTER_SANITIZE_MAGIC_QUOTES, 
-            array("options" => array(
-                "default" => 0
-            ))
-        );
-        // NUEVO O ACTUALIZA
-        if( ($id != 'NULL') && !array_key_exists($id, $arrayViajes)){
-            // ERROR
-        }else if($id == 'NULL'){
-            $id = $hora.'____'.str_replace(' ', '_',$empresa);
+        $empresa = filter_input(INPUT_GET, "empresa");        
+        if((trim($hora)!='')&&(trim($empresa)!='')) {
+            $procedencia = filter_input(INPUT_GET, "procedencia");
+            $destino = filter_input(INPUT_GET, "destino");
+            $lunes = filter_input(INPUT_GET, "lunes", FILTER_SANITIZE_MAGIC_QUOTES, 
+                array("options" => array(
+                    "default" => 0
+                ))
+            );
+            $martes  = filter_input(INPUT_GET, "martes", FILTER_SANITIZE_MAGIC_QUOTES, 
+                array("options" => array(
+                    "default" => 0
+                ))
+            );
+            $miercoles  = filter_input(INPUT_GET, "miercoles", FILTER_SANITIZE_MAGIC_QUOTES, 
+                array("options" => array(
+                    "default" => 0
+                ))
+            );
+            $jueves  = filter_input(INPUT_GET, "jueves", FILTER_SANITIZE_MAGIC_QUOTES, 
+                array("options" => array(
+                    "default" => 0
+                ))
+            );
+            $viernes  = filter_input(INPUT_GET, "viernes", FILTER_SANITIZE_MAGIC_QUOTES, 
+                array("options" => array(
+                    "default" => 0
+                ))
+            );
+            $sabado  = filter_input(INPUT_GET, "sabado", FILTER_SANITIZE_MAGIC_QUOTES, 
+                array("options" => array(
+                    "default" => 0
+                ))
+            );
+            $domingo = filter_input(INPUT_GET, "domingo", FILTER_SANITIZE_MAGIC_QUOTES, 
+                array("options" => array(
+                    "default" => 0
+                ))
+            );
+            $feriado = filter_input(INPUT_GET, "feriado", FILTER_SANITIZE_MAGIC_QUOTES, 
+                array("options" => array(
+                    "default" => 0
+                ))
+            );
+            // NUEVO O ACTUALIZA
+            if( ($id != 'NULL') && !array_key_exists($id, $arrayViajes)){
+                // ERROR
+            }else if($id == 'NULL'){
+                $id = $hora.'____'.str_replace(' ', '_',$empresa);
+            }
+            // ACTUALIZA
+            $arrayViajes[$id] = [
+                'hora'=>$hora,
+                'empresa'=>$empresa,
+                'procedencia'=>$procedencia,
+                'destino'=>$destino,
+                'dia'=> [
+                        'lunes'=>$lunes,
+                        'martes'=>$martes,
+                        'miercoles'=>$miercoles,
+                        'jueves'=>$jueves,
+                        'viernes'=>$viernes,
+                        'sabado'=>$sabado,
+                        'domingo'=>$domingo,
+                        'feriado'=>$feriado,
+                ]
+            ];
+            saveToFile($arrayViajes);
+            
         }
-        // ACTUALIZA
-        $arrayViajes[$id] = [
-            'hora'=>$hora,
-            'empresa'=>$empresa,
-            'procedencia'=>$procedencia,
-            'destino'=>$destino,
-            'dia'=> [
-                    'lunes'=>$lunes,
-                    'martes'=>$martes,
-                    'miercoles'=>$miercoles,
-                    'jueves'=>$jueves,
-                    'viernes'=>$viernes,
-                    'sabado'=>$sabado,
-                    'domingo'=>$domingo,
-                    'feriado'=>$feriado,
-            ]
-        ];
-        saveToFile($arrayViajes);
     }
     else if ($action && ($action == 'eliminar')) {
         if( ($id != 'NULL') && array_key_exists($id, $arrayViajes)){
