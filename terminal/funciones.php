@@ -3,19 +3,23 @@
     date_default_timezone_set('America/Argentina/Buenos_Aires');        
     
     function ordenar($a, $b){
-        $ha = explode('____', $a);
-        $ha = $ha[0];
-        $hb = explode('____', $b);
-        $hb = $hb[0];
+        try {
+            $ha = explode('____', $a);
+            $ha = $ha[0];
+            $hb = explode('____', $b);
+            $hb = $hb[0];
 
-        $dta = DateTime::createFromFormat("H:i", $ha);
-        $t = $dta->getTimestamp();
-        $dtb = DateTime::createFromFormat("H:i", $hb);
-        $t1 = $dtb->getTimestamp();
-        if($t < $t1) {
-            return -1;
-        } else if($t == $t1) {
-            return 0;
+            $dta = DateTime::createFromFormat("H:i", $ha);
+            $t = $dta->getTimestamp();
+            $dtb = DateTime::createFromFormat("H:i", $hb);
+            $t1 = $dtb->getTimestamp();
+            if($t < $t1) {
+                return -1;
+            } else if($t == $t1) {
+                return 0;
+            }            
+        } catch (Exception $exc) {
+            // echo $exc->getTraceAsString();
         }
         return 1;
     }
