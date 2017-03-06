@@ -22,7 +22,7 @@
 				count=settings.modulid.children("ul").children("li").length;
 				if (settings.feed!=false)
 				{
-					settings.modulid.children("ul").html("<li>Loading...</li>");
+					settings.modulid.children("ul").html("<li>Cargando...</li>");
 					getRSS();
 					
 					if (settings.feedupdatetimer!=0)

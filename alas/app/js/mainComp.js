@@ -45,25 +45,21 @@ $(document).ready(function(e) {
             start = new Date;
         }, 1000);
 
-        $(".ideaboxNews").ideaboxNews({
-		/*	maxwidth		:'400px',
-			position		:'leftfixed',
-			openspeed		:'fast'*/
-		
-			maxwidth		:'100%',
-			newscount		:6,
-			position		:'leftfixed',
-			openspeed		:'fast',
-			headercolor		:'#FFFFFF',
-			headerbgcolor           :'rgba(74, 38, 106, 0.75)',
-		//	feedimage		:'img/in-rss-image.jpg',
-			feedimage		:'',
-			feedcount		:4,
-			feed			:'http://www.clarin.com/rss/lo-ultimo/,http://www.nacion.com/rss/latest/?contentType=NWS',
-			feedlabels		:'Noticias ALAS',
-			feedlink		:'self', //or target
-			feedupdatetimer	:60000  //60000 ms = 1 Sec
-		});
+//        $(".ideaboxNews").ideaboxNews({
+//			maxwidth		:'100%',
+//			newscount		:6,
+//			position		:'leftfixed',
+//			openspeed		:'fast',
+//			headercolor		:'#FFFFFF',
+//			headerbgcolor           :'rgba(74, 38, 106, 0.75)',
+//		//	feedimage		:'img/in-rss-image.jpg',
+//			feedimage		:'',
+//			feedcount		:4,
+//			feed			:'http://www.clarin.com/rss/lo-ultimo/,',
+//			feedlabels		:'Noticias ALAS',
+//			feedlink		:'self', //or target
+//			feedupdatetimer	:60000  //60000 ms = 1 Sec
+//		});
 		
 		$('#example5').ideaboxWeather({
 			/* lang		:"sp",

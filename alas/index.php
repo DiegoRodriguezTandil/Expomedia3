@@ -5,17 +5,17 @@
         <link href="https://fonts.googleapis.com/css?family=Passion+One|Viga|Satisfy" rel="stylesheet" type='text/css'>
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
         
-        <script async defer src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyBbWhD4UD0AIkDFmxzkVFeSGNr3gSsPvvQ"></script>
-        <script src="bower_components/maplace-js/dist/maplace.min.js"></script>        
+        <script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyBbWhD4UD0AIkDFmxzkVFeSGNr3gSsPvvQ"></script>
+        <!-- script src="bower_components/maplace-js/dist/maplace.min.js"></script -->
         <script type="text/javascript" src="bower_components/timer.jquery/dist/timer.jquery.js"></script>
         <link rel="stylesheet" type="text/css" href="app/css/ideaboxWeather.css"/>
-        <link rel="stylesheet" type="text/css" href="app/css/ideaboxNews.css"/>
-        <link rel="stylesheet" type="text/css" href="app/css/jquery.mCustomScrollbar.min.css"/>      
+        <!-- link rel="stylesheet" type="text/css" href="app/css/ideaboxNews.css"/ -->
+        <!-- link rel="stylesheet" type="text/css" href="app/css/jquery.mCustomScrollbar.min.css"/ -->      
         <link rel="stylesheet" type="text/css" href="app/css/main.css"/>
         
         <script type="text/javascript" src="app/alas.maps.js"> </script>                
-        <script src="app/js/jquery.mCustomScrollbar.min.js"></script>
-        <script src="app/js/ideaboxNews.js"></script>
+        <!--script src="app/js/jquery.mCustomScrollbar.min.js"></script-->
+        <!--script src="app/js/ideaboxNews.js"></script-->
         <script src="app/js/ideaboxWeather.js"></script>
         <script src="app/js/mainComp.js"></script>
     </head>
@@ -38,33 +38,33 @@
                     <!-- Plugin code end ------------>
                 </div>
                 
-                <div class="ideaboxNews in-easing noticias" id="idx1">
+<!--                <div class="ideaboxNews in-easing noticias" id="idx1">
                 <h3>Noticias</h3>
                 <ul></ul>
-                <div class="in-viewer">
-                    <div class="in-viewer-header">
-                        <img src="trash/img1.jpg">
-                        <div>
-                            <h2>no title...</h2>
-                            <span>no date...</span>
+                    <div class="in-viewer">
+                        <div class="in-viewer-header">
+                            <img src="trash/img1.jpg">
+                            <div>
+                                <h2>no title...</h2>
+                                <span>no date...</span>
+                            </div>
                         </div>
+                        <div class="in-viewer-content">
+                            no content...                                                
+                        </div>
+                        <span class="in-viewer-close"></span>
                     </div>
-                    <div class="in-viewer-content">
-                        no content...                                                
-                    </div>
-                    <span class="in-viewer-close"></span>
-                </div>
-            </div>
+                </div>-->
             </div>
             <div id='right' style="width:69%; float: right;">
                 <div id="gmap" data-rqid="0" style="with:300px;height:100%;"></div>
             </div>            
         </div>
-        <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
+        <!-- div style="position: fixed; z-index: -99; width: 100%; height: 100%">
             <iframe frameborder="0" height="100%" width="100%"
             src="https://youtube.com/embed/97fBxHm6Nas?autoplay=1&controls=0&showinfo=0&autohide=1">
             </iframe>
-        </div>
+        </div -->
     </body>
     
 

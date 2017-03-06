@@ -1,10 +1,13 @@
 // Variables globales.
 var REFRESH_TIME = 30000;
+var RELOAD_TIME = 1800000;// 30 minutos
 var map;
 var markers = new Array();
 
 $(function() {
-
+    // hide cursor
+    $('body').css('cursor', 'none');
+    
     map = new google.maps.Map(document.getElementById('gmap'), {
         center: {lat: -37.328241, lng: -59.135563},
         zoom: 14
@@ -12,7 +15,40 @@ $(function() {
 
     GoogleMapUpdate();
     
+    ChangeFocus();
+    
+    ReloadBrowser();
+    
 });
+
+var activeElement;
+var ids = ['idx1', 'left', 'right'];
+var idPos = 0;
+
+function ReloadBrowser() {
+    setTimeout(
+            function(){
+                location.reload();                
+            },
+            RELOAD_TIME
+    );
+}
+
+function ChangeFocus() {
+    
+    idPos = (idPos + 1) % ids.length;
+    
+    console.log(ids.length);
+    console.log(idPos);
+
+    $(activeElement).focus();
+    
+    setTimeout(
+            ChangeFocus,
+            REFRESH_TIME
+    );    
+    
+};
 
 function GoogleMapUpdate() {
     var rq_id = $('#gmap').data('rqid');
